@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSU ICT Symposium 2025 — Generative AI & the Future of ICT Learning</title>
+<meta name="description" content="Rangsit University ICT Symposium 2025. Theme: Generative AI and the Future of ICT Learning. Friday 30 May 2025, 10:00–12:00 via Google Meet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SEARCH OVERLAY -->
+<div id="searchOverlay" role="dialog" aria-modal="true" aria-label="Site search">
+  <div class="search-box">
+    <div class="search-header">
+      <h3>Search</h3>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">&#x2715;</button>
+    </div>
+    <input type="text" id="searchInput" placeholder="Search sections, topics, team members…" oninput="doSearch(this.value)" autocomplete="off">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="RSU Symposium Home">
+      <!-- LOGO SLOT: Replace the placeholder below with your actual logo images -->
+      <div class="logo-group">
+        <img src="images/rsu-logo.png" alt="Rangsit University" class="logo-img" id="rsuLogo" onerror="this.style.display='none'">
+        <img src="images/ric-logo.png" alt="RIC" class="logo-img" id="ricLogo" onerror="this.style.display='none'">
+        <span class="logo-text">RSU ICT Symposium <span class="logo-year">2025</span></span>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#learning">Learning</a>
+      <a href="#committee">Committee</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" onclick="openSearch()" aria-label="Search site">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Search
+      </button>
+      <button id="darkToggle" class="nav-icon-btn" onclick="toggleDark()" aria-label="Toggle dark mode">
+        <svg id="moonIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="sunIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#about" onclick="closeMenu()">About the Symposium</a>
+  <a href="#research" onclick="closeMenu()">Research Topic</a>
+  <a href="#learning" onclick="closeMenu()">Learning Center</a>
+  <a href="#stats" onclick="closeMenu()">Statistics</a>
+  <a href="#rsu" onclick="closeMenu()">About RSU</a>
+  <a href="#committee" onclick="closeMenu()">Committee</a>
+  <a href="#schedule" onclick="closeMenu()">Schedule</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ====================================================
+     HERO
+===================================================== -->
+<section id="hero">
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="container hero-content">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot" aria-hidden="true"></span>
+      Rangsit University International College &mdash; ICT 401 Group 1
+    </div>
+    <h1 class="hero-title">
+      <span class="gradient-text">Generative AI</span><br>
+      &amp; the Future of<br>ICT Learning
+    </h1>
+    <p class="hero-subtitle">An academic symposium exploring how artificial intelligence is reshaping programming education and the skills of tomorrow's developers.</p>
+    <div class="hero-event-info">
+      <div class="event-detail">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Friday, 30 May 2025
+      </div>
+      <div class="event-detail">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        10:00 &ndash; 12:00 (GMT+7)
+      </div>
+      <div class="event-detail">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.36a1 1 0 0 1-1.447.894L15 14"/><rect x="1" y="6" width="15" height="12" rx="2" ry="2"/></svg>
+        Online via Google Meet
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join on Google Meet</a>
+      <a href="#research" class="btn btn-outline">View Research</a>
+      <a href="#" class="btn btn-outline" onclick="downloadBrochure(event)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Brochure
+      </a>
+    </div>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-bar">
+    <div class="container countdown-inner">
+      <span class="countdown-label">Symposium countdown</span>
+      <div class="countdown-units">
+        <div class="countdown-unit"><span class="cd-val" id="cd-days">00</span><span class="cd-lbl">Days</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit"><span class="cd-val" id="cd-hours">00</span><span class="cd-lbl">Hours</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit"><span class="cd-val" id="cd-mins">00</span><span class="cd-lbl">Mins</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit"><span class="cd-val" id="cd-secs">00</span><span class="cd-lbl">Secs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     ABOUT
+===================================================== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="section-header fade-in">
+          <span class="overline">About the Event</span>
+          <h2>Symposium Overview</h2>
+          <div class="divider"></div>
+        </div>
+        <p class="body-text fade-in">The RSU ICT Symposium 2025 is an academic event organized by students of Rangsit University International College under the theme <strong>"Generative AI and the Future of ICT Learning."</strong></p>
+        <p class="body-text fade-in" style="margin-top:14px;">This symposium bridges cutting-edge AI technology and academic education, bringing together students and educators to explore the transformative role of generative AI in modern ICT curricula.</p>
+        <div class="objective-list fade-in">
+          <div class="objective-item">
+            <div class="obj-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+            </div>
+            <div><h4>Advance AI Literacy</h4><p>Build awareness of generative AI tools among ICT students and educators.</p></div>
+          </div>
+          <div class="objective-item">
+            <div class="obj-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div><h4>Present Original Research</h4><p>Showcase student-led research on AI coding agents and programming skills.</p></div>
+          </div>
+          <div class="objective-item">
+            <div class="obj-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div><h4>Foster Collaboration</h4><p>Create a platform for meaningful exchange between students and faculty.</p></div>
+          </div>
+          <div class="objective-item">
+            <div class="obj-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div><h4>Shape Future Curricula</h4><p>Identify how AI tools can be integrated ethically into university coursework.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="poster-panel">
+          <img src="images/symposium-poster.jpg" alt="RSU ICT Symposium 2025 Official Poster — Generative AI and the Future of ICT Learning" class="poster-img">
+        </div>
+        <div class="outcomes-card">
+          <h4 class="outcomes-title">Expected Outcomes</h4>
+          <ul class="outcomes-list">
+            <li>Published research findings on AI coding agents' influence on programming skills</li>
+            <li>A curated educational resource library on generative AI for ICT learners</li>
+            <li>Framework for responsible AI integration in university programming courses</li>
+            <li>Increased awareness of AI tools such as Copilot, ChatGPT, and Claude among RSU students</li>
+            <li>Recommendations for faculty on assessment in an AI-assisted environment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     RESEARCH TOPIC
+===================================================== -->
+<section id="research" class="section bg-surface">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="overline">Research Topic</span>
+      <h2>The Influence of AI Coding Agents<br>on Programming Skills Development</h2>
+      <div class="divider center-div"></div>
+      <p class="lead">An in-depth study of how AI-powered coding tools reshape the way students acquire, practice, and master programming.</p>
+    </div>
+    <div class="research-layout">
+      <aside class="research-sidebar fade-in">
+        <div class="sidebar-card">
+          <h4>Research Questions</h4>
+          <ol class="rq-list">
+            <li>How do AI coding agents affect the rate at which students learn to code?</li>
+            <li>Do students who use AI tools develop deeper or shallower conceptual understanding?</li>
+            <li>What role does over-reliance on AI play in skill degradation?</li>
+            <li>How should educators adapt assessment in the era of AI-assisted coding?</li>
+          </ol>
+        </div>
+        <div class="sidebar-card">
+          <h4>Methodology</h4>
+          <p class="small-text">Survey-based quantitative research targeting RSU ICT students, supplemented by literature analysis using the Health Belief Model (HBM) and Technology Acceptance Model (TAM).</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Tools Studied</h4>
+          <div class="tool-tags">
+            <span class="tool-tag">GitHub Copilot</span>
+            <span class="tool-tag">ChatGPT</span>
+            <span class="tool-tag">Claude</span>
+            <span class="tool-tag">Gemini</span>
+            <span class="tool-tag">Cursor</span>
+            <span class="tool-tag">Tabnine</span>
+          </div>
+        </div>
+      </aside>
+      <div class="research-blocks fade-in">
+        <div class="r-block">
+          <h3>Introduction</h3>
+          <p>The emergence of AI coding agents marks a pivotal shift in software education. Tools such as GitHub Copilot, ChatGPT, Claude, and Gemini now provide real-time code generation, debugging assistance, and intelligent suggestions. This research examines whether these tools empower learners or inadvertently erode foundational programming skills.</p>
+        </div>
+        <div class="r-block">
+          <h3>Problem Statement</h3>
+          <p>While AI coding agents demonstrably increase short-term productivity, there is growing concern among educators that students may be bypassing the cognitive struggle necessary for deep skill acquisition. The core tension this research addresses is between AI-assisted efficiency and independent competency development in ICT education.</p>
+        </div>
+        <div class="r-block">
+          <h3>Benefits of AI Coding Agents</h3>
+          <div class="benefit-grid">
+            <div class="benefit-item">Faster prototyping and iteration</div>
+            <div class="benefit-item">Instant debugging assistance</div>
+            <div class="benefit-item">Code explanation and documentation</div>
+            <div class="benefit-item">Reduces barriers to entry</div>
+            <div class="benefit-item">Available 24/7 without cost</div>
+            <div class="benefit-item">Boilerplate code automation</div>
+            <div class="benefit-item">Accelerates learning new syntax</div>
+            <div class="benefit-item">Ideation and architecture support</div>
+          </div>
+        </div>
+        <div class="r-block">
+          <h3>Challenges &amp; Limitations</h3>
+          <ul class="challenge-list">
+            <li>Risk of over-reliance reducing independent problem-solving ability</li>
+            <li>Potential for reinforcing incorrect programming habits</li>
+            <li>Security and academic integrity concerns</li>
+            <li>AI-generated code may lack context-specific optimization</li>
+            <li>Ethical questions around intellectual property attribution</li>
+            <li>Unequal access to premium AI tools among students</li>
+          </ul>
+        </div>
+        <div class="r-block">
+          <h3>Future Implications for ICT Education</h3>
+          <p>ICT programs must evolve to embrace AI tools as pedagogical instruments rather than threats. Future curricula should emphasize AI-collaborative problem-solving, critical evaluation of AI outputs, and ethical coding practices. Assessment frameworks need redesigning to test conceptual understanding alongside implementation ability.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     LEARNING CENTER
+===================================================== -->
+<section id="learning" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="overline">Learning Center</span>
+      <h2>Explore Generative AI</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('foundations',this)">Foundations</button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('tools',this)">AI Tools</button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('dev',this)">Software Development</button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('ethics',this)">Ethics</button>
+    </div>
+
+    <div id="tab-foundations" class="tab-panel active" role="tabpanel">
+      <div class="card-grid">
+        <div class="learn-card fade-in"><div class="card-accent blue"></div><h4>What is Generative AI?</h4><p>Generative AI refers to machine learning models capable of producing new content — text, images, code, audio — based on patterns learned from vast training datasets. Unlike traditional AI focused on classification, generative models create.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent purple"></div><h4>Large Language Models</h4><p>LLMs are the backbone of modern AI coding agents. Trained on billions of tokens including source code repositories, they develop a statistical understanding of programming syntax, patterns, and logic across many languages.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent cyan"></div><h4>AI in Education</h4><p>Generative AI is transforming education by enabling personalized learning pathways, instant feedback, content generation, and intelligent tutoring — raising both opportunities and challenges for academic integrity.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent blue"></div><h4>What are AI Coding Agents?</h4><p>AI coding agents are specialized systems designed to assist with software development: writing code, explaining concepts, debugging, documenting, and suggesting improvements in real time within developer environments.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent purple"></div><h4>Prompt Engineering</h4><p>The skill of crafting effective instructions for AI models. Good prompts are specific, contextual, and iterative. In coding contexts, well-structured prompts yield significantly better and more maintainable code outputs.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent cyan"></div><h4>Transformer Architecture</h4><p>The neural network architecture powering modern LLMs. Transformers use attention mechanisms to weigh the importance of different input sections, enabling coherent long-form generation including complex code structures.</p></div>
+      </div>
+    </div>
+
+    <div id="tab-tools" class="tab-panel" role="tabpanel">
+      <div class="card-grid">
+        <div class="tool-card fade-in">
+          <div class="tool-header"><div class="tool-badge" style="background:#10a37f">GPT</div><div><h4>ChatGPT</h4><span class="tool-company">OpenAI &middot; GPT-4o</span></div></div>
+          <p>A conversational AI system capable of writing, debugging, and explaining code across virtually every programming language. Widely used by students for homework assistance and concept clarification.</p>
+          <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="tool-link">Visit ChatGPT &rarr;</a>
+        </div>
+        <div class="tool-card fade-in">
+          <div class="tool-header"><div class="tool-badge" style="background:#161b22">GH</div><div><h4>GitHub Copilot</h4><span class="tool-company">GitHub &middot; OpenAI</span></div></div>
+          <p>An AI pair programmer embedded directly in code editors. It suggests complete functions, boilerplate, and test cases in real time as you type, learning from the current file context.</p>
+          <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" class="tool-link">Visit Copilot &rarr;</a>
+        </div>
+        <div class="tool-card fade-in">
+          <div class="tool-header"><div class="tool-badge" style="background:#d97706">CL</div><div><h4>Claude</h4><span class="tool-company">Anthropic</span></div></div>
+          <p>A safety-focused AI assistant built on Constitutional AI principles. Excels at nuanced code review, detailed explanations, and architectural discussions. Strong at reasoning about complex software designs.</p>
+          <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="tool-link">Visit Claude &rarr;</a>
+        </div>
+        <div class="tool-card fade-in">
+          <div class="tool-header"><div class="tool-badge" style="background:#4285f4">G</div><div><h4>Gemini</h4><span class="tool-company">Google DeepMind</span></div></div>
+          <p>Google's multimodal AI model with deep integration into the Google ecosystem. Gemini can understand code screenshots, generate multi-language implementations, and assist with data science workflows.</p>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="tool-link">Visit Gemini &rarr;</a>
+        </div>
+        <div class="tool-card fade-in">
+          <div class="tool-header"><div class="tool-badge" style="background:#7c3aed">CU</div><div><h4>Cursor</h4><span class="tool-company">Anysphere Inc.</span></div></div>
+          <p>An AI-native code editor built on VS Code with deep AI integration. Supports codebase-wide queries, multi-file edits, and intelligent refactoring. One of the fastest-growing developer tools of 2025.</p>
+          <a href="https://cursor.com" target="_blank" rel="noopener noreferrer" class="tool-link">Visit Cursor &rarr;</a>
+        </div>
+        <div class="tool-card fade-in">
+          <div class="tool-header"><div class="tool-badge" style="background:#1a5cff">TN</div><div><h4>Tabnine</h4><span class="tool-company">Tabnine AI</span></div></div>
+          <p>A privacy-focused AI code completion tool that can be run locally or in the cloud. Supports team-level customization, learning from proprietary codebases while keeping intellectual property secure.</p>
+          <a href="https://tabnine.com" target="_blank" rel="noopener noreferrer" class="tool-link">Visit Tabnine &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-dev" class="tab-panel" role="tabpanel">
+      <div class="card-grid">
+        <div class="learn-card fade-in"><div class="card-accent blue"></div><h4>Code Generation</h4><p>AI tools can generate working code from natural language descriptions. This accelerates prototyping but requires developers to critically evaluate correctness, security, and alignment with project architecture.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent purple"></div><h4>Code Review &amp; Analysis</h4><p>AI assistants can analyze existing code for bugs, performance issues, security flaws, and style inconsistencies — providing feedback that previously required senior developer time or expensive tools.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent cyan"></div><h4>Test Generation</h4><p>Automatically generating unit tests, integration tests, and edge case scenarios is one of AI's highest-value contributions to software quality — covering code paths developers might overlook under pressure.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent blue"></div><h4>Documentation</h4><p>AI can generate docstrings, README files, API documentation, and inline comments from existing code, dramatically reducing the documentation burden in fast-moving projects.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent purple"></div><h4>Refactoring Support</h4><p>AI tools can suggest and execute refactoring operations — renaming variables, extracting methods, optimizing algorithms, and migrating code to newer patterns or frameworks.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent cyan"></div><h4>Intelligent Debugging</h4><p>By analyzing stack traces, error messages, and code context, AI debuggers can identify root causes and suggest targeted fixes — often catching issues invisible under time pressure.</p></div>
+      </div>
+    </div>
+
+    <div id="tab-ethics" class="tab-panel" role="tabpanel">
+      <div class="card-grid">
+        <div class="learn-card fade-in"><div class="card-accent red"></div><h4>Academic Integrity</h4><p>Using AI tools without disclosure constitutes academic dishonesty at most institutions. Students must understand their university's policies, cite AI assistance, and ensure submitted work reflects genuine understanding.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent purple"></div><h4>Avoiding Over-Reliance</h4><p>Consistently outsourcing problem-solving to AI prevents the struggle necessary for deep learning. Effective use of AI should amplify thinking, not replace it — treat AI as a collaborator, not an answer machine.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent blue"></div><h4>Data Privacy</h4><p>Prompting AI systems with sensitive code or personal data can expose that information. Understand data retention policies and use enterprise or local models when working with confidential projects.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent cyan"></div><h4>Intellectual Property</h4><p>The legal status of AI-generated code is still evolving globally. Developers should be aware of training data sources, potential licensing implications, and the importance of understanding all code submitted as their own.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent red"></div><h4>Bias &amp; Fairness</h4><p>AI models can reflect biases present in their training data — producing code that encodes assumptions or performs differently for certain input categories. Critical review of AI outputs is always essential.</p></div>
+        <div class="learn-card fade-in"><div class="card-accent blue"></div><h4>Responsible Use</h4><p>A responsible AI use policy for students should cover transparency, verification of outputs, documentation of AI contributions, and a commitment to continued independent skill development.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     STATISTICS
+===================================================== -->
+<section id="stats" class="section bg-surface">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="overline">By the Numbers</span>
+      <h2>AI Adoption in Education</h2>
+      <div class="divider center-div"></div>
+    </div>
+    <div class="stats-grid fade-in">
+      <div class="stat-card"><span class="stat-num" data-target="73">0%</span><p>of university students report using AI tools for coursework (2024)</p></div>
+      <div class="stat-card"><span class="stat-num" data-target="56">0%</span><p>of developers use AI coding assistants weekly</p></div>
+      <div class="stat-card"><span class="stat-num" data-target="40">0%</span><p>productivity increase reported by GitHub Copilot users</p></div>
+      <div class="stat-card"><span class="stat-num" data-target="88">0%</span><p>of tech companies plan to expand AI tool adoption by 2026</p></div>
+    </div>
+    <div class="charts-row fade-in">
+      <div class="chart-card"><h4>AI Tool Usage by Student Year</h4><canvas id="barChart"></canvas></div>
+      <div class="chart-card"><h4>Perceived Impact on Learning</h4><canvas id="pieChart"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     ABOUT RSU
+===================================================== -->
+<section id="rsu" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="overline">Our Institution</span>
+      <h2>About Rangsit University</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="two-col">
+      <div class="fade-in">
+        <p class="body-text">Rangsit University (RSU) is a private research university located in Pathum Thani Province, Thailand. Founded in 1986, RSU has grown into one of Thailand's most innovative universities, recognized for its strong emphasis on technology, creativity, and international collaboration.</p>
+        <p class="body-text" style="margin-top:14px;">The International College at RSU offers English-medium programs designed to develop globally competitive graduates. The ICT programs are recognized for their industry relevance and research culture.</p>
+        <div class="rsu-badges">
+          <span class="badge">Est. 1986</span>
+          <span class="badge">Pathum Thani</span>
+          <span class="badge">International College</span>
+          <span class="badge">OHEC Accredited</span>
+          <span class="badge">Research University</span>
+        </div>
+        <div class="rsu-numbers">
+          <div class="rsu-num"><div class="rn-val">32+</div><div class="rn-lbl">Faculties</div></div>
+          <div class="rsu-num"><div class="rn-val">30K+</div><div class="rn-lbl">Students</div></div>
+          <div class="rsu-num"><div class="rn-val">38yr</div><div class="rn-lbl">Excellence</div></div>
+          <div class="rsu-num"><div class="rn-val">Top 5</div><div class="rn-lbl">Private Uni</div></div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <h3 style="margin-bottom:20px;font-size:1.2rem;">ICT-Related Programs</h3>
+        <div class="program-list">
+          <div class="program-item"><div class="prog-line blue"></div><div><h4>B.Sc. Information &amp; Communication Technology</h4><p>Software development, networks, cybersecurity, and data systems</p></div></div>
+          <div class="program-item"><div class="prog-line purple"></div><div><h4>B.Sc. Artificial Intelligence</h4><p>Machine learning, deep learning, NLP, and AI application development</p></div></div>
+          <div class="program-item"><div class="prog-line cyan"></div><div><h4>B.Sc. Data Science</h4><p>Statistical analysis, data engineering, visualization, and predictive modeling</p></div></div>
+          <div class="program-item"><div class="prog-line blue"></div><div><h4>B.Sc. Digital Media &amp; Technology</h4><p>Interactive media, game development, UX design, and creative technology</p></div></div>
+          <div class="program-item"><div class="prog-line purple"></div><div><h4>B.Sc. Cybersecurity</h4><p>Ethical hacking, digital forensics, network security, and compliance</p></div></div>
+        </div>
+        <a href="https://www.rsu.ac.th" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:24px;display:inline-flex;">Visit RSU Official Website &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     COMMITTEE
+===================================================== -->
+<section id="committee" class="section bg-surface">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="overline">Organizing Committee</span>
+      <h2>Meet the Team</h2>
+      <div class="divider center-div"></div>
+      <p class="lead">ICT 401 Group 1 &mdash; Faculty of Information Technology, Rangsit University</p>
+    </div>
+
+    <!-- Team 1 -->
+    <div class="team-group fade-in">
+      <div class="team-group-header">
+        <span class="team-badge">Team 1</span>
+        <span class="team-name">Technical &amp; Platform Management Team</span>
+      </div>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/aung-myo.jpg" alt="Aung Myo" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/aung-myo.jpg" alt="Aung Myo" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#1a5cff,#7c3aed);display:none">AM</div>
+          </div>
+          </div>
+          <div class="member-name">Aung Myo</div>
+          <div class="member-id">6702955 &middot; Aizen</div>
+          <div class="member-role blue-role">Technical Lead</div>
+          <p class="member-desc">Full-stack developer and project coordinator overseeing platform architecture and team direction.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/phoo-myat-may-zaw.jpg" alt="Phoo Myat May Zaw" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#06b6d4,#1a5cff);display:none">PM</div>
+          </div>
+          <div class="member-name">Phoo Myat May Zaw</div>
+          <div class="member-id">6703013 &middot; B</div>
+          <div class="member-role blue-role">Platform Developer</div>
+          <p class="member-desc">Responsible for backend systems, database design, and platform integration.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/ngwe-tun.jpg" alt="Ngwe Tun" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#1a5cff);display:none">NT</div>
+          </div>
+          <div class="member-name">Ngwe Tun</div>
+          <div class="member-id">6504147 &middot; Sam</div>
+          <div class="member-role blue-role">Platform Developer</div>
+          <p class="member-desc">Frontend development and UI/UX implementation for the symposium's digital presence.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/zin-min-soe.jpg" alt="Zin Min Soe" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#0ea5e9,#7c3aed);display:none">ZM</div>
+          </div>
+          <div class="member-name">Zin Min Soe</div>
+          <div class="member-id">6602049 &middot; Mori</div>
+          <div class="member-role blue-role">Platform Support</div>
+          <p class="member-desc">Technical support, testing, and quality assurance for all digital deliverables.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team 2 -->
+    <div class="team-group fade-in">
+      <div class="team-group-header">
+        <span class="team-badge">Team 2</span>
+        <span class="team-name">Public Relations &amp; Sponsorship Team</span>
+      </div>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/hein-lin-zaw.jpg" alt="Hein Lin Zaw" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/hein-lin-zaw.jpg" alt="Hein Lin Zaw" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#059669,#06b6d4);display:none">HL</div>
+          </div>
+          </div>
+          <div class="member-name">Hein Lin Zaw</div>
+          <div class="member-id">6703300 &middot; Wayne</div>
+          <div class="member-role green-role">PR Lead</div>
+          <p class="member-desc">Leads public relations strategy, media outreach, and sponsorship communications.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/htet-lin-zaw.jpg" alt="Htet Lin Zaw" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#10b981,#059669);display:none">HT</div>
+          </div>
+          <div class="member-name">Htet Lin Zaw</div>
+          <div class="member-id">6703472 &middot; Columbus</div>
+          <div class="member-role green-role">PR Officer</div>
+          <p class="member-desc">Social media management, content scheduling, and engagement across platforms.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/zay-yar-min.jpg" alt="Zay Yar Min" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#34d399,#059669);display:none">ZY</div>
+          </div>
+          <div class="member-name">Zay Yar Min</div>
+          <div class="member-id">6703321 &middot; Andrew</div>
+          <div class="member-role green-role">PR Officer</div>
+          <p class="member-desc">Handles promotional materials, announcements, and community outreach.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/sai-kaung-thant.jpg" alt="Sai Kaung Thant" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#6ee7b7,#059669);display:none">SK</div>
+          </div>
+          <div class="member-name">Sai Kaung Thant</div>
+          <div class="member-id">6703294 &middot; Isaac</div>
+          <div class="member-role green-role">Sponsorship</div>
+          <p class="member-desc">Manages sponsor relationships, partnership proposals, and funding coordination.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team 3 -->
+    <div class="team-group fade-in">
+      <div class="team-group-header">
+        <span class="team-badge">Team 3</span>
+        <span class="team-name">Publications, Content &amp; Creative Team</span>
+      </div>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/htun-naung-oo.jpg" alt="Htun Naung Oo" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/htun-naung-oo.jpg" alt="Htun Naung Oo" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7);display:none">HN</div>
+          </div>
+          </div>
+          <div class="member-name">Htun Naung Oo</div>
+          <div class="member-id">6702854 &middot; Memory</div>
+          <div class="member-role purple-role">Creative Lead</div>
+          <p class="member-desc">Leads creative direction, visual identity, and design strategy for all publications.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/khant-khun-tun.jpg" alt="Khant Khun Tun" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#a855f7,#7c3aed);display:none">KK</div>
+          </div>
+          <div class="member-name">Khant Khun Tun</div>
+          <div class="member-id">6604552 &middot; Kenzo</div>
+          <div class="member-role purple-role">Content Creator</div>
+          <p class="member-desc">Academic content writing, research summaries, and symposium publication materials.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/saw-joshua-htoo.jpg" alt="Saw Joshua Htoo" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#c084fc,#7c3aed);display:none">SJ</div>
+          </div>
+          <div class="member-name">Saw Joshua Htoo</div>
+          <div class="member-id">6509995 &middot; Josh</div>
+          <div class="member-role purple-role">Graphic Designer</div>
+          <p class="member-desc">Poster design, visual assets, and branding materials for the symposium.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/htet-htoo-lwin.jpg" alt="Htet Htoo Lwin" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#e879f9,#7c3aed);display:none">HH</div>
+          </div>
+          <div class="member-name">Htet Htoo Lwin</div>
+          <div class="member-id">6601797 &middot; Jammy</div>
+          <div class="member-role purple-role">Content Editor</div>
+          <p class="member-desc">Editorial review, copywriting, and quality control of all written symposium content.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/htin-lin-aung.jpg" alt="Htin Lin Aung" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);display:none">HL2</div>
+          </div>
+          <div class="member-name">Htin Lin Aung</div>
+          <div class="member-id">6601671 &middot; Carlos</div>
+          <div class="member-role purple-role">Media Producer</div>
+          <p class="member-desc">Video content, multimedia production, and digital publishing for the symposium.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team 4 -->
+    <div class="team-group fade-in">
+      <div class="team-group-header">
+        <span class="team-badge">Team 4</span>
+        <span class="team-name">Moderation, Engagement &amp; Registration Team</span>
+      </div>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/htoo-myat-htin-lynn.jpg" alt="Htoo Myat Htin Lynn" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/htoo-myat-htin-lynn.jpg" alt="Htoo Myat Htin Lynn" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);display:none">HM</div>
+          </div>
+          </div>
+          <div class="member-name">Htoo Myat Htin Lynn</div>
+          <div class="member-id">6702942 &middot; Zenon</div>
+          <div class="member-role amber-role">Registration Lead</div>
+          <p class="member-desc">Oversees attendee registration, confirmation systems, and on-day check-in logistics.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/aung-ko-ko-min.jpg" alt="Aung Ko Ko Min" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/aung-ko-ko-min.jpg" alt="Aung Ko Ko Min" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);display:none">AK</div>
+          </div>
+          </div>
+          <div class="member-name">Aung Ko Ko Min</div>
+          <div class="member-id">6703339 &middot; Minn</div>
+          <div class="member-role amber-role">Main Leader &amp; Sub Moderator &amp; Sub MC</div>
+          <p class="member-desc">Main project leader, sub moderator, and sub MC — coordinates overall event flow and supports moderation.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/aung-kaung-sett-naing.jpg" alt="Aung Kaung Sett Naing" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/aung-kaung-sett-naing.jpg" alt="Aung Kaung Sett Naing" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#fcd34d,#f59e0b);display:none">AKN</div>
+          </div>
+          </div>
+          <div class="member-name">Aung Kaung Sett Naing</div>
+          <div class="member-id">6703015 &middot; Eddrick</div>
+          <div class="member-role amber-role">Main Moderator</div>
+          <p class="member-desc">Leads session moderation, manages audience engagement, and facilitates Q&amp;A throughout the symposium.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team 5 -->
+    <div class="team-group fade-in">
+      <div class="team-group-header">
+        <span class="team-badge">Team 5</span>
+        <span class="team-name">Documentation, Reporting &amp; Certification Team</span>
+      </div>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/napason-saadaiem.jpg" alt="Napason Saadaiem" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/napason-saadaiem.jpg" alt="Napason Saadaiem" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#dc2626,#b91c1c);display:none">NS</div>
+          </div>
+          </div>
+          <div class="member-name">Napason Saadaiem</div>
+          <div class="member-id">6610505 &middot; Mabel</div>
+          <div class="member-role red-role">Documentation Lead</div>
+          <p class="member-desc">Leads proceedings documentation, reporting, and certification preparation.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/hsu-lei-yee.jpg" alt="Hsu Lei Yee" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#ef4444,#dc2626)">HL</div>
+          </div>
+          <div class="member-name">Hsu Lei Yee</div>
+          <div class="member-id">6702867 &middot; Lei Yee</div>
+          <div class="member-role red-role">Main MC</div>
+          <p class="member-desc">Leads the symposium as Main MC — hosts all sessions, manages transitions, and keeps the event on schedule.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar-wrap">
+            <img src="images/members/kyaw-zaw-lin.jpg" alt="Kyaw Zaw Lin" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar-wrap">
+            <img src="images/members/kyaw-zaw-lin.jpg" alt="Kyaw Zaw Lin" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#f87171,#dc2626);display:none">KZ</div>
+          </div>
+          </div>
+          <div class="member-name">Kyaw Zaw Lin</div>
+          <div class="member-id">6702599 &middot; Lin</div>
+          <div class="member-role red-role">Certification Officer</div>
+          <p class="member-desc">Manages certificate design, preparation, and distribution to all registered participants.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SCHEDULE
+===================================================== -->
+<section id="schedule" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="overline">Event Program</span>
+      <h2>Symposium Schedule</h2>
+      <div class="divider"></div>
+      <div class="schedule-meta">
+        <span class="sched-detail">Friday, 30 May 2025</span>
+        <span class="sched-sep" aria-hidden="true">&bull;</span>
+        <span class="sched-detail">10:00 &ndash; 12:00 (GMT+7)</span>
+        <span class="sched-sep" aria-hidden="true">&bull;</span>
+        <span class="sched-detail">Online via Google Meet</span>
+      </div>
+    </div>
+    <div class="timeline fade-in">
+      <div class="tl-item">
+        <div class="tl-time">09:45</div>
+        <div class="tl-dot blue-dot"></div>
+        <div class="tl-body"><h4>Pre-Session — Attendee Join &amp; Tech Check</h4><p>Join the Google Meet link early. Test audio, video, and screen sharing. Welcome by registration team.</p><span class="tl-tag">Pre-Event</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10:00</div>
+        <div class="tl-dot purple-dot"></div>
+        <div class="tl-body"><h4>Opening Ceremony</h4><p>Welcome address and symposium overview. Introduction of organizing teams and agenda review.</p><span class="tl-tag">Opening</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10:15</div>
+        <div class="tl-dot blue-dot"></div>
+        <div class="tl-body"><h4>Expert Speaker Keynote — Generative AI &amp; ICT Education</h4><p>An invited keynote address examining AI's broader impact on ICT learning and the skills required of tomorrow's developers.</p><span class="tl-tag">Keynote</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10:45</div>
+        <div class="tl-dot purple-dot"></div>
+        <div class="tl-body"><h4>Research Presentation — AI Coding Agents &amp; Programming Skills</h4><p>Full presentation of research findings covering methodology, survey results, analysis, and key conclusions by the organizing team.</p><span class="tl-tag">Research</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">11:20</div>
+        <div class="tl-dot cyan-dot"></div>
+        <div class="tl-body"><h4>Panel Discussion — AI Tools: Friend or Foe to Learners?</h4><p>A moderated panel debating the pedagogical benefits and risks of AI coding assistants in university education.</p><span class="tl-tag">Panel</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">11:45</div>
+        <div class="tl-dot blue-dot"></div>
+        <div class="tl-body"><h4>Open Q&amp;A Session</h4><p>Audience questions for the research team and panelists. Open floor discussion on practical implications and recommendations.</p><span class="tl-tag">Interactive</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">12:00</div>
+        <div class="tl-dot purple-dot"></div>
+        <div class="tl-body"><h4>Closing Ceremony</h4><p>Closing remarks, acknowledgment of contributors, and announcement of proceedings publication. Group virtual photo.</p><span class="tl-tag">Closing</span></div>
+      </div>
+    </div>
+    <div class="schedule-cta fade-in">
+      <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join on Google Meet</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     GALLERY
+===================================================== -->
+<section id="gallery" class="section bg-surface">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="overline">Visual Archive</span>
+      <h2>Gallery</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-filter fade-in">
+      <button class="filter-btn active" onclick="filterGallery('all',this)">All</button>
+      <button class="filter-btn" onclick="filterGallery('poster',this)">Posters</button>
+      <button class="filter-btn" onclick="filterGallery('team',this)">Team</button>
+      <button class="filter-btn" onclick="filterGallery('campus',this)">Campus</button>
+      <button class="filter-btn" onclick="filterGallery('event',this)">Event</button>
+    </div>
+    <div class="gallery-grid fade-in" id="galleryGrid">
+      <div class="gallery-item" data-cat="poster">
+        <img src="images/symposium-poster.jpg" alt="RSU ICT Symposium 2025 Official Poster">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item" data-cat="poster"><div class="gallery-placeholder"><p>Research Topic<br>Poster</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Team 1<br>Technical</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Team 2<br>Public Relations</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Full Committee<br>Group Photo</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="campus"><div class="gallery-placeholder"><p>RSU<br>Main Campus</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="campus"><div class="gallery-placeholder"><p>ICT Faculty<br>Building</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="event"><div class="gallery-placeholder"><p>Keynote<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="event"><div class="gallery-placeholder"><p>Panel<br>Discussion</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="event"><div class="gallery-placeholder"><p>Q&amp;A<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="poster"><div class="gallery-placeholder"><p>Statistics<br>Infographic</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Working<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
+    </div>
+    <p class="gallery-note fade-in">Event photos will be added after the symposium on 30 May 2025.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     FAQ
+===================================================== -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="overline">Have Questions?</span>
+      <h2>Frequently Asked Questions</h2>
+      <div class="divider center-div"></div>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Who can attend the symposium?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>The symposium is open to all RSU students, faculty members, and invited guests. Registration is required. Attendance is free of charge for RSU students and staff. The event is held online via Google Meet, so anyone with the link can attend.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I join the Google Meet?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>The Google Meet link will be sent to all registered attendees by email before the event. You can also find the link on this website's contact section closer to the event date. We recommend joining 10–15 minutes early for a tech check.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will proceedings be published?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Yes. A formal symposium proceedings document including the research paper, panel discussion summary, and key recommendations will be published and made available on this website as a downloadable PDF after the event.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What theoretical frameworks are used?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>The research draws on the Health Belief Model (HBM) adapted to predict AI adoption behavior, and the Technology Acceptance Model (TAM) to assess perceived usefulness and ease of use of AI coding tools among students.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will there be certificates for attendees?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Yes. Registered attendees who attend the full session will receive a digital certificate of participation. Certificates are managed by Team 5 (Documentation, Reporting &amp; Certification Team) and will be distributed by email after the event.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is a recording available after the event?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>A recording of the symposium will be made available to registered attendees after the event, subject to speaker consent. Check this website or contact the organizing committee for access details.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     CONTACT
+===================================================== -->
+<section id="contact" class="section bg-surface">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="overline">Get in Touch</span>
+      <h2>Contact Us</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info fade-in">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div><h4>Email</h4><a href="mailto:ict.symposium@rsu.ac.th">ict.symposium@rsu.ac.th</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.36a1 1 0 0 1-1.447.894L15 14"/><rect x="1" y="6" width="15" height="12" rx="2"/></svg>
+          </div>
+          <div><h4>Online Platform</h4><a href="https://meet.google.com" target="_blank" rel="noopener noreferrer">Google Meet</a><p class="contact-sub">Link sent to registered attendees</p></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div><h4>Event Date &amp; Time</h4><p>Friday, 30 May 2025<br>10:00 &ndash; 12:00 (GMT+7)</p></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><h4>Organizer</h4><p>Faculty of Information Technology<br>Rangsit University<br>52/347 Phaholyothin Rd, Pathum Thani</p></div>
+        </div>
+        <div class="contact-social">
+          <h4>Follow Rangsit University</h4>
+          <div class="social-links">
+            <a href="https://www.rsu.ac.th" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              www.rsu.ac.th
+            </a>
+            <a href="https://www.facebook.com/RangsitUniversity" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Rangsit University
+            </a>
+            <a href="https://www.instagram.com/rangsituniversity" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              @rangsituniversity
+            </a>
+            <a href="https://line.me/R/ti/p/@rsuconnect" target="_blank" rel="noopener noreferrer" class="social-btn line-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 7.56c.14.17.21.37.21.58 0 .21-.07.41-.21.58L13 14.5c-.14.17-.34.26-.55.26s-.41-.09-.55-.26l-3.64-3.78c-.14-.17-.21-.37-.21-.58 0-.21.07-.41.21-.58.14-.17.34-.26.55-.26h7.28c.21 0 .41.09.55.26z"/></svg>
+              @rsuconnect
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-in">
+        <h3>Send a Message</h3>
+        <p class="body-text" style="margin-bottom:24px;">Have questions about the symposium or the research? We'd love to hear from you.</p>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Your first name"></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Your last name"></div>
+          </div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="you@example.com"></div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject">
+              <option>General Inquiry</option>
+              <option>Registration Question</option>
+              <option>Research Collaboration</option>
+              <option>Media / Press</option>
+              <option>Technical Support</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="msg">Message</label><textarea id="msg" placeholder="Your message…" rows="4"></textarea></div>
+          <button class="btn btn-primary" onclick="submitForm(event)">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FOOTER
+===================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <!-- LOGO SLOT in footer -->
+        <img src="images/rsu-logo.png" alt="Rangsit University" class="footer-logo-img" onerror="this.style.display='none'">
+        <div class="footer-logo-text">RSU ICT Symposium 2025</div>
+        <p>Generative AI &amp; the Future of ICT Learning. Organized by ICT 401 Group 1, Faculty of Information Technology, Rangsit University.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Sections</h5>
+        <ul>
+          <li><a href="#about">About Symposium</a></li>
+          <li><a href="#research">Research Topic</a></li>
+          <li><a href="#learning">Learning Center</a></li>
+          <li><a href="#stats">Statistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Event</h5>
+        <ul>
+          <li><a href="#rsu">About RSU</a></li>
+          <li><a href="#committee">Committee</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Links</h5>
+        <ul>
+          <li><a href="https://www.rsu.ac.th" target="_blank" rel="noopener noreferrer">RSU Official Website</a></li>
+          <li><a href="https://www.facebook.com/RangsitUniversity" target="_blank" rel="noopener noreferrer">RSU Facebook</a></li>
+          <li><a href="https://meet.google.com" target="_blank" rel="noopener noreferrer">Join Google Meet</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RSU ICT Symposium &mdash; Rangsit University International College</p>
+      <p>Organized by ICT 401 Group 1</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
