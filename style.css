@@ -717,3 +717,30 @@ img { max-width: 100%; height: auto; }
 /* Fix hero content overflow on mobile */
 .hero-content { overflow: hidden; }
 .hero-eyebrow { max-width: 100%; box-sizing: border-box; }
+
+/* Team Leader card highlight */
+.leader-card { border: 2px solid var(--c-blue) !important; background: var(--c-blue-l) !important; }
+.leader-role {
+  display: inline-block; font-size: .7rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 50px; margin-bottom: 9px;
+  background: linear-gradient(135deg, #1a5cff, #7c3aed);
+  color: #fff;
+}
+
+/* NAVBAR — mobile: hide search text, show only icon */
+@media (max-width: 680px) {
+  /* Hide search button text on mobile — just show dark toggle + hamburger */
+  .nav-icon-btn[onclick="openSearch()"] { display: none; }
+  .nav-icon-btn#darkToggle { padding: 7px 9px; }
+  .nav-inner { gap: 6px; }
+  /* Make logo text smaller so it fits */
+  .logo-text { font-size: .78rem; }
+  .logo-img { height: 26px; }
+  .logo-group { gap: 7px; }
+}
+
+/* NAVBAR — make sure logo never gets cut off */
+.nav-logo { flex-shrink: 0; min-width: 0; }
+.logo-group { flex-shrink: 1; min-width: 0; overflow: hidden; }
+.logo-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+.nav-actions { flex-shrink: 0; }
