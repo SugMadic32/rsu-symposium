@@ -38,7 +38,7 @@ const SEARCH_INDEX = [
   { title: 'Statistics',              href: '#stats',      desc: 'AI adoption statistics and data visualizations' },
   { title: 'About Rangsit University',href: '#rsu',        desc: 'RSU overview, programs, and achievements' },
   { title: 'Organizing Committee',    href: '#committee',  desc: 'All 5 teams and 17 members with roles' },
-  { title: 'Event Schedule',          href: '#schedule',   desc: 'Full program — 30 May 2025, 10:00–12:00 GMT+7' },
+  { title: 'Event Schedule',          href: '#schedule',   desc: 'Full program — 27 July 2026, 14:00–16:00 GMT+7' },
   { title: 'Gallery',                 href: '#gallery',    desc: 'Posters, team, campus, and event photos' },
   { title: 'FAQ',                     href: '#faq',        desc: 'Frequently asked questions about the symposium' },
   { title: 'Contact',                 href: '#contact',    desc: 'Email, social links, and message form' },
@@ -124,15 +124,19 @@ function filterGallery(cat, btn) {
 }
 
 // ——————————————————————————————————————————
-// COUNTDOWN — Target: 30 May 2025 10:00 GMT+7
+// COUNTDOWN — Target: 27 July 2026 14:00 GMT+7
 // ——————————————————————————————————————————
 function updateCountdown() {
-  const target = new Date('2025-05-30T10:00:00+07:00');
+  const target = new Date('2026-07-27T13:30:00+07:00');
   const now = new Date();
   const diff = target - now;
 
   if (diff <= 0) {
-    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+    // Event already happened — show completed message
+    const bar = document.querySelector('.countdown-bar');
+    if (bar) {
+      bar.innerHTML = `<div class="container"><div style="padding:14px 0;text-align:center;font-family:var(--font-d);font-size:.88rem;color:var(--c-blue);font-weight:600;letter-spacing:.04em;">✓ SYMPOSIUM COMPLETED — 27 JULY 2026</div></div>`;
+    }
     return;
   }
   const d = Math.floor(diff / 86400000);
@@ -411,7 +415,7 @@ function submitForm(e) {
 // ——————————————————————————————————————————
 function downloadBrochure(e) {
   e.preventDefault();
-  alert('The symposium brochure will be available for download closer to the event on 30 May 2025. Check back soon!');
+  alert('The symposium brochure will be available for download closer to the event on 27 July 2026. Check back soon!');
 }
 
 // ——————————————————————————————————————————
