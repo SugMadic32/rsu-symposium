@@ -718,29 +718,52 @@ img { max-width: 100%; height: auto; }
 .hero-content { overflow: hidden; }
 .hero-eyebrow { max-width: 100%; box-sizing: border-box; }
 
-/* Team Leader card highlight */
-.leader-card { border: 2px solid var(--c-blue) !important; background: var(--c-blue-l) !important; }
-.leader-role {
-  display: inline-block; font-size: .7rem; font-weight: 700;
-  padding: 3px 10px; border-radius: 50px; margin-bottom: 9px;
-  background: linear-gradient(135deg, #1a5cff, #7c3aed);
-  color: #fff;
-}
 
-/* NAVBAR — mobile: hide search text, show only icon */
+
+/* ============================================================
+   SEARCH BAR ROW (below navbar)
+   ============================================================ */
+#searchBarRow {
+  position: fixed; top: 60px; left: 0; right: 0; z-index: 999;
+  background: var(--c-surface2);
+  border-bottom: 1px solid var(--c-border);
+  padding: 0;
+}
+.search-bar-inner {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 20px;
+}
+.search-bar-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--c-surface); border: 1px solid var(--c-border);
+  color: var(--c-muted); border-radius: 8px;
+  padding: 8px 14px; font-size: .84rem; font-family: var(--font-b);
+  cursor: pointer; transition: border-color .2s, box-shadow .2s;
+  flex: 1; text-align: left;
+}
+.search-bar-btn:hover { border-color: var(--c-blue); box-shadow: 0 0 0 3px rgba(26,92,255,.08); }
+.search-bar-hint {
+  font-family: var(--font-m); font-size: .72rem; color: var(--c-muted);
+  white-space: nowrap;
+}
+@media (max-width: 680px) { .search-bar-hint { display: none; } }
+
+/* Push page content down to account for navbar + search bar */
+#hero { padding-top: 100px; }
+#mobileMenu { top: 100px; }
+
+/* NAVBAR — restore full logo sizes, clean layout */
+.nav-inner { height: 60px; }
+.logo-img { height: 32px; width: auto; }
+.logo-text { font-size: .95rem; font-weight: 700; white-space: nowrap; }
+.logo-group { display: flex; align-items: center; gap: 10px; }
+.nav-actions { display: flex; align-items: center; gap: 6px; margin-left: 8px; flex-shrink: 0; }
+.nav-links { margin-left: auto; }
+
+/* Mobile navbar — just dark toggle + hamburger, logo full size */
 @media (max-width: 680px) {
-  /* Hide search button text on mobile — just show dark toggle + hamburger */
-  .nav-icon-btn[onclick="openSearch()"] { display: none; }
-  .nav-icon-btn#darkToggle { padding: 7px 9px; }
-  .nav-inner { gap: 6px; }
-  /* Make logo text smaller so it fits */
-  .logo-text { font-size: .78rem; }
-  .logo-img { height: 26px; }
-  .logo-group { gap: 7px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .logo-text { font-size: .88rem; }
+  .logo-img { height: 28px; }
 }
-
-/* NAVBAR — make sure logo never gets cut off */
-.nav-logo { flex-shrink: 0; min-width: 0; }
-.logo-group { flex-shrink: 1; min-width: 0; overflow: hidden; }
-.logo-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
-.nav-actions { flex-shrink: 0; }
