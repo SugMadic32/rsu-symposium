@@ -148,8 +148,16 @@ function updateCountdown() {
   document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
   document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
 }
-setInterval(updateCountdown, 1000);
-updateCountdown();
+// Run after DOM ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function() {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  });
+} else {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
 
 // ——————————————————————————————————————————
 // STATS COUNTER ANIMATION

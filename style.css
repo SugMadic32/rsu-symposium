@@ -55,7 +55,7 @@ img { max-width: 100%; display: block; }
 a { color: var(--c-blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
 button { cursor: pointer; font-family: var(--font-b); border: none; }
-.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
 .section { padding: 88px 0; }
 .bg-surface { background: var(--c-surface); }
 
@@ -184,7 +184,7 @@ h4 { font-size: 1rem; }
   justify-content: center; position: relative; overflow: hidden; padding-top: 60px;
 }
 #particleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
-.hero-content { position: relative; z-index: 2; padding: 72px 0 40px; }
+.hero-content { position: relative; z-index: 2; padding: 72px 0 40px; width: 100%; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--c-blue-l); border: 1px solid rgba(26,92,255,.2);
@@ -515,9 +515,10 @@ footer { background: #060c1a; color: rgba(255,255,255,.75); padding: 56px 0 28px
    RESPONSIVE — MOBILE
    ============================================================ */
 @media (max-width: 680px) {
-  /* Base */
-  .container { padding: 0 16px; }
+  /* Base — SAFE PADDING — content never touches edges */
+  .container { padding: 0 18px !important; }
   .section { padding: 52px 0; }
+  html, body { overflow-x: hidden; width: 100%; }
 
   /* Navbar */
   .nav-links { display: none; }
@@ -675,12 +676,12 @@ footer { background: #060c1a; color: rgba(255,255,255,.75); padding: 56px 0 28px
   flex-shrink: 0;
 }
 .qr-wrap {
-  padding: 24px;
+  padding: 16px;
   display: flex; justify-content: center; align-items: center;
   background: #fff;
 }
 .qr-img {
-  width: 180px; height: 180px;
+  width: 130px; height: 130px;
   object-fit: contain;
   display: block;
 }
@@ -698,3 +699,21 @@ footer { background: #060c1a; color: rgba(255,255,255,.75); padding: 56px 0 28px
   .forms-grid { grid-template-columns: 1fr; gap: 18px; }
   .qr-img { width: 160px; height: 160px; }
 }
+
+/* Register Now button */
+.btn-register {
+  background: linear-gradient(135deg, #059669, #06b6d4);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(5,150,105,.35);
+  font-weight: 700;
+}
+.btn-register:hover { box-shadow: 0 8px 28px rgba(5,150,105,.45); }
+
+/* Fix body overflow */
+body { overflow-x: hidden; width: 100%; }
+*, *::before, *::after { max-width: 100%; }
+img { max-width: 100%; height: auto; }
+
+/* Fix hero content overflow on mobile */
+.hero-content { overflow: hidden; }
+.hero-eyebrow { max-width: 100%; box-sizing: border-box; }
