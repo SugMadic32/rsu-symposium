@@ -102,7 +102,7 @@ h4 { font-size: 1rem; }
    NAVBAR
    ============================================================ */
 #navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
   background: rgba(247,249,252,.88);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--c-border);
@@ -181,7 +181,7 @@ h4 { font-size: 1rem; }
    ============================================================ */
 #hero {
   min-height: 100vh; display: flex; flex-direction: column;
-  justify-content: center; position: relative; overflow: hidden; padding-top: 60px;
+  justify-content: center; position: relative; overflow: hidden; padding-top: 102px;
 }
 #particleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 .hero-content { position: relative; z-index: 2; padding: 72px 0 40px; width: 100%; }
@@ -724,7 +724,7 @@ img { max-width: 100%; height: auto; }
    SEARCH BAR ROW (below navbar)
    ============================================================ */
 #searchBarRow {
-  position: fixed; top: 60px; left: 0; right: 0; z-index: 999;
+  position: fixed; top: 60px; left: 0; right: 0; z-index: 1000;
   background: var(--c-surface2);
   border-bottom: 1px solid var(--c-border);
   padding: 0;
@@ -748,9 +748,8 @@ img { max-width: 100%; height: auto; }
 }
 @media (max-width: 680px) { .search-bar-hint { display: none; } }
 
-/* Push page content down to account for navbar + search bar */
-#hero { padding-top: 100px; }
-#mobileMenu { top: 100px; }
+/* Mobile menu offset accounts for navbar + search bar */
+#mobileMenu { top: 102px; }
 
 /* NAVBAR — restore full logo sizes, clean layout */
 .nav-inner { height: 60px; }
