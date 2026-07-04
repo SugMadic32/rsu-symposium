@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSU ICT Symposium 2025 — Generative AI & the Future of ICT Learning</title>
+<title>RIC ICT Symposium 2026 — Generative AI & the Future of ICT Learning</title>
 <meta name="description" content="Rangsit University ICT Symposium 2025. Theme: Generative AI and the Future of ICT Learning. Monday 27 July 2026, 14:00–16:00 via Google Meet.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -29,8 +29,8 @@
     <a href="#hero" class="nav-logo" aria-label="RSU Symposium Home">
       <!-- LOGO SLOT: Replace the placeholder below with your actual logo images -->
       <div class="logo-group">
-        <img src="images/rsu-logo.png" alt="Rangsit University" class="logo-img" id="rsuLogo" onerror="this.style.display='none'">
-        <img src="images/ric-logo.png" alt="RIC" class="logo-img" id="ricLogo" onerror="this.style.display='none'">
+        <img src="images/rsu-logo.png" alt="Rangsit University" class="logo-img" id="rsuLogo" onerror="this.style.display='none'" style="display:none">
+        <img src="images/ric-logo.png" alt="RIC" class="logo-img" id="ricLogo" onerror="this.style.display='none'" style="display:none">
         <span class="logo-text">RSU ICT Symposium <span class="logo-year">2026</span></span>
       </div>
     </a>
@@ -1154,9 +1154,9 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <!-- LOGO SLOT in footer -->
-        <img src="images/rsu-logo.png" alt="Rangsit University" class="footer-logo-img" onerror="this.style.display='none'">
-        <div class="footer-logo-text">RSU ICT Symposium 2025</div>
-        <p>Generative AI &amp; the Future of ICT Learning. Organized by ICT 401 Group 1, Faculty of Information Technology, Rangsit University.</p>
+        <img src="images/rsu-logo.png" alt="Rangsit University" class="footer-logo-img" onerror="this.style.display='none'" style="display:none">
+        <div class="footer-logo-text">RIC ICT Symposium 2026</div>
+        <p>Generative AI &amp; the Future of ICT Learning. Organized by ICT 401 Group 1, Faculty of Information Technology, Rangsit University International College.</p>
       </div>
       <div class="footer-col">
         <h5>Sections</h5>
@@ -1194,5 +1194,19 @@
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+// Show logos only if they load successfully
+(function() {
+  var logos = ['rsuLogo', 'ricLogo'];
+  logos.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var test = new Image();
+    test.onload = function() { el.style.display = 'block'; };
+    test.src = el.src;
+  });
+})();
+</script>
 </body>
 </html>
