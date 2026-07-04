@@ -832,3 +832,36 @@ img { max-width: 100%; height: auto; }
   .prof-card { padding: 18px; gap: 14px; }
   .prof-avatar-wrap, .prof-photo, .prof-initials { width: 64px; height: 64px; }
 }
+
+/* ============================================================
+   EVALUATION QR LOCK
+   ============================================================ */
+.qr-locked-wrap { position: relative; }
+.qr-blurred {
+  filter: blur(8px);
+  opacity: .5;
+  transition: filter .6s, opacity .6s;
+  pointer-events: none;
+  user-select: none;
+}
+.qr-unlocked { filter: none !important; opacity: 1 !important; pointer-events: auto !important; }
+.qr-lock-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: rgba(124,58,237,.55);
+  backdrop-filter: blur(2px);
+  border-radius: 0;
+  transition: opacity .6s;
+}
+.qr-lock-overlay.hidden { opacity: 0; pointer-events: none; }
+.qr-lock-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+}
+.qr-lock-text {
+  color: #fff; font-size: .84rem; text-align: center; line-height: 1.5;
+}
+.qr-lock-text strong { font-size: .95rem; }

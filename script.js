@@ -441,3 +441,41 @@ window.addEventListener('load', () => {
   }
 });
 window.addEventListener('resize', drawCharts);
+
+// ——————————————————————————————————————————
+// EVALUATION QR LOCK — unlocks after 27 July 2026 3:00 PM GMT+7
+// ——————————————————————————————————————————
+function checkEvalLock() {
+  const unlockTime = new Date('2026-07-27T15:00:00+07:00');
+  const now = new Date();
+  const img = document.getElementById('evalQrImg');
+  const overlay = document.getElementById('evalLockOverlay');
+  const status = document.getElementById('evalStatus');
+  const desc = document.getElementById('evalDesc');
+
+  if (!img) return;
+
+  if (now >= unlockTime) {
+    // UNLOCKED
+    img.classList.remove('qr-blurred');
+    img.classList.add('qr-unlocked');
+    if (overlay) overlay.classList.add('hidden');
+    if (status) status.textContent = 'Now available — scan to evaluate!';
+    if (desc) desc.textContent = 'Thank you for attending! Please scan the QR code to submit your evaluation. Your feedback helps us improve future events.';
+  } else {
+    // LOCKED — calculate time remaining
+    const diff = unlockTime - now;
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    if (status) {
+      if (d > 0) status.textContent = `Unlocks in ${d} day${d>1?'s':''} and ${h} hour${h!==1?'s':''}`;
+      else if (h > 0) status.textContent = `Unlocks in ${h} hour${h!==1?'s':''} and ${m} min`;
+      else status.textContent = `Unlocks in ${m} minute${m!==1?'s':''}`;
+    }
+  }
+}
+
+// Check on load and every minute
+document.addEventListener('DOMContentLoaded', checkEvalLock);
+setInterval(checkEvalLock, 60000);
