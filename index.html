@@ -183,8 +183,25 @@
         </div>
       </div>
       <div class="fade-in">
-        <div class="poster-panel">
-          <img src="images/gallery/poster-1.png" alt="RSU ICT Symposium 2026 Official Poster — Generative AI and the Future of ICT Learning" class="poster-img">
+        <div class="poster-slideshow">
+          <div class="poster-slides" id="posterSlides">
+            <div class="poster-slide active">
+              <img src="images/gallery/poster-1.png" alt="RSU ICT Symposium 2026 Poster 1" class="poster-img">
+            </div>
+            <div class="poster-slide">
+              <img src="images/gallery/poster-2.png" alt="RSU ICT Symposium 2026 Poster 2" class="poster-img">
+            </div>
+            <div class="poster-slide">
+              <img src="images/gallery/poster-3.png" alt="RSU ICT Symposium 2026 Poster 3" class="poster-img">
+            </div>
+          </div>
+          <div class="poster-dots">
+            <button class="poster-dot active" onclick="goToSlide(0)" aria-label="Poster 1"></button>
+            <button class="poster-dot" onclick="goToSlide(1)" aria-label="Poster 2"></button>
+            <button class="poster-dot" onclick="goToSlide(2)" aria-label="Poster 3"></button>
+          </div>
+          <button class="poster-prev" onclick="changeSlide(-1)" aria-label="Previous">&#8249;</button>
+          <button class="poster-next" onclick="changeSlide(1)" aria-label="Next">&#8250;</button>
         </div>
         <div class="outcomes-card">
           <h4 class="outcomes-title">Expected Outcomes</h4>

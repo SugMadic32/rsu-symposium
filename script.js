@@ -479,3 +479,27 @@ function checkEvalLock() {
 // Check on load and every minute
 document.addEventListener('DOMContentLoaded', checkEvalLock);
 setInterval(checkEvalLock, 60000);
+
+// ——————————————————————————————————————————
+// POSTER SLIDESHOW
+// ——————————————————————————————————————————
+let currentSlide = 0;
+const totalSlides = 3;
+
+function goToSlide(n) {
+  const slides = document.querySelectorAll('.poster-slide');
+  const dots = document.querySelectorAll('.poster-dot');
+  if (!slides.length) return;
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = (n + totalSlides) % totalSlides;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function changeSlide(dir) {
+  goToSlide(currentSlide + dir);
+}
+
+// Auto-advance every 4 seconds
+setInterval(function() { changeSlide(1); }, 4000);
