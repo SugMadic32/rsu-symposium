@@ -200,8 +200,7 @@
             <button class="poster-dot" onclick="goToSlide(1)" aria-label="Poster 2"></button>
             <button class="poster-dot" onclick="goToSlide(2)" aria-label="Poster 3"></button>
           </div>
-          <button class="poster-prev" onclick="changeSlide(-1)" aria-label="Previous">&#8249;</button>
-          <button class="poster-next" onclick="changeSlide(1)" aria-label="Next">&#8250;</button>
+
         </div>
         <div class="outcomes-card">
           <h4 class="outcomes-title">Expected Outcomes</h4>
@@ -802,98 +801,58 @@
       <button class="filter-btn" onclick="filterGallery('event',this)">Event</button>
     </div>
     <div class="gallery-grid fade-in" id="galleryGrid">
-      <div class="gallery-item" data-cat="poster">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/poster-1.png')" style="cursor:pointer" data-cat="poster">
         <img src="images/gallery/poster-1.png" alt="RSU ICT Symposium 2026 Poster 1" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="poster">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/poster-2.png')" style="cursor:pointer" data-cat="poster">
         <img src="images/gallery/poster-2.png" alt="RSU ICT Symposium 2026 Poster 2" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="poster">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/poster-3.png')" style="cursor:pointer" data-cat="poster">
         <img src="images/gallery/poster-3.png" alt="RSU ICT Symposium 2026 Poster 3" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Team 1<br>Technical</p></div><div class="gallery-overlay"><span>View</span></div></div>
-      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Team 2<br>Public Relations</p></div><div class="gallery-overlay"><span>View</span></div></div>
-      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Full Committee<br>Group Photo</p></div><div class="gallery-overlay"><span>View</span></div></div>
-      <div class="gallery-item" data-cat="campus">
+      <div class="gallery-item" style="cursor:pointer" data-cat="team"><div class="gallery-placeholder"><p>Team 1<br>Technical</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" style="cursor:pointer" data-cat="team"><div class="gallery-placeholder"><p>Team 2<br>Public Relations</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" style="cursor:pointer" data-cat="team"><div class="gallery-placeholder"><p>Full Committee<br>Group Photo</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/gallery/campus-1.webp')" style="cursor:pointer" data-cat="campus">
         <img src="images/gallery/campus-1.webp" alt="RSU Main Campus" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="campus">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/campus-2.jpg')" style="cursor:pointer" data-cat="campus">
         <img src="images/gallery/campus-2.jpg" alt="RSU Building 11" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="campus">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/campus-3.jpg')" style="cursor:pointer" data-cat="campus">
         <img src="images/gallery/campus-3.jpg" alt="RSU Campus" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="campus">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/campus-4.jpg')" style="cursor:pointer" data-cat="campus">
         <img src="images/gallery/campus-4.jpg" alt="Rangsit University Campus" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="campus">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/campus-5.jpg')" style="cursor:pointer" data-cat="campus">
         <img src="images/gallery/campus-5.jpg" alt="RSU Campus Area" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="campus">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/campus-6.jpg')" style="cursor:pointer" data-cat="campus">
         <img src="images/gallery/campus-6.jpg" alt="RSU Campus 2015" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="campus">
+      <div class="gallery-item" onclick="openLightbox('images/gallery/campus-7.webp')" style="cursor:pointer" data-cat="campus">
         <img src="images/gallery/campus-7.webp" alt="RSU Campus Overview" loading="lazy">
         <div class="gallery-overlay"><span>View</span></div>
       </div>
-      <div class="gallery-item" data-cat="event"><div class="gallery-placeholder"><p>Keynote<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
-      <div class="gallery-item" data-cat="event"><div class="gallery-placeholder"><p>Panel<br>Discussion</p></div><div class="gallery-overlay"><span>View</span></div></div>
-      <div class="gallery-item" data-cat="event"><div class="gallery-placeholder"><p>Q&amp;A<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
-      <div class="gallery-item" data-cat="poster"><div class="gallery-placeholder"><p>Statistics<br>Infographic</p></div><div class="gallery-overlay"><span>View</span></div></div>
-      <div class="gallery-item" data-cat="team"><div class="gallery-placeholder"><p>Working<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" style="cursor:pointer" data-cat="event"><div class="gallery-placeholder"><p>Keynote<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" style="cursor:pointer" data-cat="event"><div class="gallery-placeholder"><p>Panel<br>Discussion</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" style="cursor:pointer" data-cat="event"><div class="gallery-placeholder"><p>Q&amp;A<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" style="cursor:pointer" data-cat="poster"><div class="gallery-placeholder"><p>Statistics<br>Infographic</p></div><div class="gallery-overlay"><span>View</span></div></div>
+      <div class="gallery-item" style="cursor:pointer" data-cat="team"><div class="gallery-placeholder"><p>Working<br>Session</p></div><div class="gallery-overlay"><span>View</span></div></div>
     </div>
     <p class="gallery-note fade-in">Event photos will be added after the symposium on 27 July 2026.</p>
   </div>
 </section>
-
-<!-- ====================================================
-     FAQ
-===================================================== -->
-<section id="faq" class="section">
-  <div class="container">
-    <div class="section-header center fade-in">
-      <span class="overline">Have Questions?</span>
-      <h2>Frequently Asked Questions</h2>
-      <div class="divider center-div"></div>
-    </div>
-    <div class="faq-list fade-in">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Who can attend the symposium?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>The symposium is open to all RSU students, faculty members, and invited guests. Registration is required. Attendance is free of charge for RSU students and staff. The event is held online via Google Meet, so anyone with the link can attend.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I join the Google Meet?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>The Google Meet link will be sent to all registered attendees by email before the event. You can also find the link on this website's contact section closer to the event date. We recommend joining 10–15 minutes early for a tech check.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will proceedings be published?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Yes. A formal symposium proceedings document including the research paper, panel discussion summary, and key recommendations will be published and made available on this website as a downloadable PDF after the event.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What theoretical frameworks are used?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>The research draws on the Health Belief Model (HBM) adapted to predict AI adoption behavior, and the Technology Acceptance Model (TAM) to assess perceived usefulness and ease of use of AI coding tools among students.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will there be certificates for attendees?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Yes. Registered attendees who attend the full session will receive a digital certificate of participation. Certificates are managed by Team 5 (Documentation, Reporting &amp; Certification Team) and will be distributed by email after the event.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is a recording available after the event?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>A recording of the symposium will be made available to registered attendees after the event, subject to speaker consent. Check this website or contact the organizing committee for access details.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!-- ====================================================
      ICT PROFESSORS / FACULTY
@@ -993,6 +952,47 @@
 
 
 <!-- ====================================================
+     FAQ
+===================================================== -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="overline">Have Questions?</span>
+      <h2>Frequently Asked Questions</h2>
+      <div class="divider center-div"></div>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Who can attend the symposium?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>The symposium is open to all RSU students, faculty members, and invited guests. Registration is required. Attendance is free of charge for RSU students and staff. The event is held online via Google Meet, so anyone with the link can attend.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I join the Google Meet?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>The Google Meet link will be sent to all registered attendees by email before the event. You can also find the link on this website's contact section closer to the event date. We recommend joining 10–15 minutes early for a tech check.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will proceedings be published?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Yes. A formal symposium proceedings document including the research paper, panel discussion summary, and key recommendations will be published and made available on this website as a downloadable PDF after the event.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What theoretical frameworks are used?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>The research draws on the Health Belief Model (HBM) adapted to predict AI adoption behavior, and the Technology Acceptance Model (TAM) to assess perceived usefulness and ease of use of AI coding tools among students.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will there be certificates for attendees?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Yes. Registered attendees who attend the full session will receive a digital certificate of participation. Certificates are managed by Team 5 (Documentation, Reporting &amp; Certification Team) and will be distributed by email after the event.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is a recording available after the event?<svg class="faq-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>A recording of the symposium will be made available to registered attendees after the event, subject to speaker consent. Check this website or contact the organizing committee for access details.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ====================================================
      FORMS — REGISTER & EVALUATION
 ===================================================== -->
 <section id="forms" class="section">
@@ -1060,6 +1060,10 @@
         </div>
         <div class="form-card-body">
           <p class="form-card-desc" id="evalDesc">This evaluation form will be unlocked after the symposium ends. Please come back to share your feedback — it helps us improve future events.</p>
+          <a href="https://forms.gle/bVEUWzwk1G74oByp8" target="_blank" rel="noopener noreferrer" class="form-direct-btn" id="evalFormBtn" style="display:none">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Evaluate via Link
+          </a>
           <div class="form-card-meta">
             <span class="form-meta-item">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1122,7 +1126,7 @@
             </a>
             <a href="https://www.facebook.com/rangsit.inter" target="_blank" rel="noopener noreferrer" class="social-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              Rangsit University International Programs
+              Rangsit University International Programs (RIC)
             </a>
             <a href="https://www.instagram.com/rangsit_inter" target="_blank" rel="noopener noreferrer" class="social-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -1225,5 +1229,11 @@
   });
 })();
 </script>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:20px;">
+  <button onclick="closeLightbox()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;z-index:3001;">&times;</button>
+  <img id="lightboxImg" src="" alt="" style="max-width:95vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.6);">
+</div>
 </body>
 </html>

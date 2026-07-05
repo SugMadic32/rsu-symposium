@@ -907,3 +907,50 @@ img { max-width: 100%; height: auto; }
   transition: background .2s, transform .2s;
 }
 .poster-dot.active { background: var(--c-blue); transform: scale(1.3); }
+
+/* ============================================================
+   GALLERY FIXES — padding, hover, lightbox
+   ============================================================ */
+.gallery-grid { gap: 20px; }
+.gallery-item {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s, box-shadow .25s;
+}
+.gallery-item:hover { transform: scale(1.03); box-shadow: var(--shadow-md); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Lightbox */
+#lightbox {
+  position: fixed; inset: 0; z-index: 3000;
+  background: rgba(0,0,0,.92);
+  align-items: center; justify-content: center;
+  padding: 20px; cursor: zoom-out;
+}
+
+/* ============================================================
+   POSTER SLIDESHOW — swipeable, no arrows
+   ============================================================ */
+.poster-slideshow { touch-action: pan-y; user-select: none; }
+.poster-prev, .poster-next { display: none; }
+.poster-dots { padding: 10px 0 8px; }
+
+/* ============================================================
+   STATS — interactive chart tooltips
+   ============================================================ */
+.chart-tooltip {
+  position: fixed; z-index: 500;
+  background: var(--c-text); color: var(--c-bg);
+  padding: 10px 14px; border-radius: var(--r-sm);
+  font-size: .82rem; font-weight: 500; line-height: 1.5;
+  pointer-events: none; display: none;
+  max-width: 220px; box-shadow: var(--shadow-md);
+}
+.chart-card { cursor: pointer; }
+.chart-card:hover { box-shadow: var(--shadow-md); }
+
+/* ============================================================
+   NAVBAR — professors link
+   ============================================================ */

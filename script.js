@@ -503,3 +503,134 @@ function changeSlide(dir) {
 
 // Auto-advance every 4 seconds
 setInterval(function() { changeSlide(1); }, 4000);
+
+// ——————————————————————————————————————————
+// LIGHTBOX
+// ——————————————————————————————————————————
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  if (!lb || !img) return;
+  img.src = src;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  lb.style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// ——————————————————————————————————————————
+// POSTER SWIPE (touch + mouse drag)
+// ——————————————————————————————————————————
+(function() {
+  var startX = 0, isDragging = false;
+  var el = document.querySelector('.poster-slides');
+  if (!el) return;
+
+  function onStart(x) { startX = x; isDragging = true; }
+  function onEnd(x) {
+    if (!isDragging) return;
+    isDragging = false;
+    var diff = startX - x;
+    if (Math.abs(diff) > 40) changeSlide(diff > 0 ? 1 : -1);
+  }
+
+  // Touch
+  el.addEventListener('touchstart', function(e) { onStart(e.touches[0].clientX); }, { passive: true });
+  el.addEventListener('touchend', function(e) { onEnd(e.changedTouches[0].clientX); });
+
+  // Mouse drag
+  el.addEventListener('mousedown', function(e) { onStart(e.clientX); e.preventDefault(); });
+  el.addEventListener('mouseup', function(e) { onEnd(e.clientX); });
+  el.addEventListener('mouseleave', function() { isDragging = false; });
+})();
+
+// ——————————————————————————————————————————
+// STATS CHART INTERACTIVE TOOLTIPS
+// ——————————————————————————————————————————
+(function() {
+  // Add tooltip div
+  var tip = document.createElement('div');
+  tip.className = 'chart-tooltip';
+  tip.id = 'chartTooltip';
+  document.body.appendChild(tip);
+
+  var barInfo = [
+    { label: 'Year 1 Students', val: '45%', desc: 'Year 1 students are beginning to explore AI tools, primarily using ChatGPT for assignment help and concept clarification.' },
+    { label: 'Year 2 Students', val: '62%', desc: 'Year 2 students use AI tools more regularly for coding assignments, debugging, and understanding algorithms.' },
+    { label: 'Year 3 Students', val: '78%', desc: 'Year 3 students heavily rely on AI coding agents like GitHub Copilot for project development and code review.' },
+    { label: 'Year 4 Students', val: '86%', desc: 'Year 4 students are the highest users — integrating AI tools into capstone projects and research work daily.' },
+  ];
+
+  var pieInfo = [
+    { label: 'Helps learning', val: '41%', desc: 'Students who feel AI tools significantly improve their understanding and learning speed.' },
+    { label: 'Mixed impact', val: '32%', desc: 'Students who see both benefits and drawbacks — AI helps but also creates dependency concerns.' },
+    { label: 'Reduces effort', val: '18%', desc: 'Students who use AI mainly to reduce workload without deep engagement with the material.' },
+    { label: 'Not useful', val: '9%', desc: 'Students who find AI tools unhelpful or distracting for their learning style.' },
+  ];
+
+  function showTip(e, title, val, desc) {
+    tip.innerHTML = '<strong>' + title + ': ' + val + '</strong><br>' + desc;
+    tip.style.display = 'block';
+    moveTip(e);
+  }
+  function moveTip(e) {
+    var x = e.clientX + 14, y = e.clientY - 10;
+    if (x + 230 > window.innerWidth) x = e.clientX - 234;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+  function hideTip() { tip.style.display = 'none'; }
+
+  var barCard = document.querySelector('#barChart');
+  var pieCard = document.querySelector('#pieChart');
+
+  if (barCard) {
+    barCard.style.cursor = 'crosshair';
+    barCard.addEventListener('mousemove', function(e) {
+      var rect = barCard.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var idx = Math.floor((x / rect.width) * 4);
+      if (idx >= 0 && idx < 4) showTip(e, barInfo[idx].label, barInfo[idx].val, barInfo[idx].desc);
+    });
+    barCard.addEventListener('mouseleave', hideTip);
+  }
+
+  if (pieCard) {
+    pieCard.style.cursor = 'crosshair';
+    pieCard.addEventListener('click', function(e) {
+      var rect = pieCard.getBoundingClientRect();
+      var cx = rect.width * 0.35, cy = rect.height / 2;
+      var dx = (e.clientX - rect.left) - cx;
+      var dy = (e.clientY - rect.top) - cy;
+      var angle = Math.atan2(dy, dx) + Math.PI / 2;
+      var norm = ((angle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+      var cumulative = 0;
+      var vals = [0.41, 0.32, 0.18, 0.09];
+      for (var i = 0; i < vals.length; i++) {
+        cumulative += vals[i] * 2 * Math.PI;
+        if (norm <= cumulative) {
+          showTip(e, pieInfo[i].label, pieInfo[i].val, pieInfo[i].desc);
+          setTimeout(hideTip, 3000);
+          break;
+        }
+      }
+    });
+    pieCard.addEventListener('mouseleave', hideTip);
+  }
+})();
+
+// ——————————————————————————————————————————
+// SHOW EVAL FORM LINK AFTER EVENT
+// ——————————————————————————————————————————
+(function() {
+  var unlockTime = new Date('2026-07-27T15:00:00+07:00');
+  var btn = document.getElementById('evalFormBtn');
+  if (btn && new Date() >= unlockTime) btn.style.display = 'flex';
+})();
