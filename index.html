@@ -90,55 +90,85 @@
 <section id="hero">
   <canvas id="particleCanvas" aria-hidden="true"></canvas>
   <div class="container hero-content">
-    <div class="hero-eyebrow">
-      <span class="eyebrow-dot" aria-hidden="true"></span>
-      Rangsit University International College &mdash; ICT 401 Group 1
-    </div>
-    <h1 class="hero-title">
-      <span class="gradient-text">Generative AI</span><br>
-      &amp; the Future of<br>ICT Learning
-    </h1>
-    <p class="hero-subtitle">An academic symposium exploring how artificial intelligence is reshaping programming education and the skills of tomorrow's developers.</p>
-    <div class="hero-event-info">
-      <div class="event-detail">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Monday, 27 July 2026
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Rangsit University International College &mdash; ICT 401 Group 1
       </div>
-      <div class="event-detail">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        13:30 &ndash; 15:00 (GMT+7)
-      </div>
-      <div class="event-detail">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.36a1 1 0 0 1-1.447.894L15 14"/><rect x="1" y="6" width="15" height="12" rx="2" ry="2"/></svg>
-        Online via Google Meet
+      <h1 class="hero-title">
+        <span class="gradient-text">Generative AI</span><br>
+        &amp; the Future of<br>ICT Learning
+      </h1>
+      <p class="hero-subtitle">An academic symposium exploring how artificial intelligence is reshaping programming education and the skills of tomorrow's developers.</p>
+      <div class="hero-ctas">
+        <a href="https://forms.gle/jCUCbBL1tZYNqtc36" target="_blank" rel="noopener noreferrer" class="btn btn-register">Register Now</a>
+        <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join on Google Meet</a>
+        <a href="#research" class="btn btn-outline">View Research</a>
       </div>
     </div>
-    <div class="hero-ctas">
-      <a href="#forms" class="btn btn-register">Register Now</a>
-      <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join on Google Meet</a>
-      <a href="#research" class="btn btn-outline">View Research</a>
-      <a href="#" class="btn btn-outline" onclick="downloadBrochure(event)">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download Brochure
-      </a>
+    <div class="hero-panel-wrap">
+      <div class="event-panel">
+        <div class="ep-bar">
+          <span class="ep-dot ep-red"></span>
+          <span class="ep-dot ep-yellow"></span>
+          <span class="ep-dot ep-green"></span>
+          <span class="ep-title">Event Details</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-row">
+            <div class="ep-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="ep-info">
+              <span class="ep-label">DATE</span>
+              <span class="ep-val">Monday, 27 July 2026</span>
+            </div>
+          </div>
+          <div class="ep-row">
+            <div class="ep-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="ep-info">
+              <span class="ep-label">TIME</span>
+              <span class="ep-val">1:30 PM &ndash; 3:00 PM (GMT+7)</span>
+            </div>
+          </div>
+          <div class="ep-row">
+            <div class="ep-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.36a1 1 0 0 1-1.447.894L15 14"/><rect x="1" y="6" width="15" height="12" rx="2"/></svg>
+            </div>
+            <div class="ep-info">
+              <span class="ep-label">PLATFORM</span>
+              <span class="ep-val">Online via Google Meet</span>
+            </div>
+          </div>
+          <div class="ep-row">
+            <div class="ep-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <div class="ep-info">
+              <span class="ep-label">ORGANIZER</span>
+              <span class="ep-val">ICT 401 Group 1 &mdash; RIC</span>
+            </div>
+          </div>
+          <div class="ep-countdown">
+            <div class="ep-cd-label">COUNTDOWN TO SYMPOSIUM</div>
+            <div class="ep-cd-units">
+              <div class="ep-cd-u"><span class="cd-val" id="cd-days">00</span><span class="ep-cd-l">Days</span></div>
+              <span class="ep-cd-sep">:</span>
+              <div class="ep-cd-u"><span class="cd-val" id="cd-hours">00</span><span class="ep-cd-l">Hrs</span></div>
+              <span class="ep-cd-sep">:</span>
+              <div class="ep-cd-u"><span class="cd-val" id="cd-mins">00</span><span class="ep-cd-l">Min</span></div>
+              <span class="ep-cd-sep">:</span>
+              <div class="ep-cd-u"><span class="cd-val" id="cd-secs">00</span><span class="ep-cd-l">Sec</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Countdown -->
-  <div class="countdown-bar">
-    <div class="container countdown-inner">
-      <span class="countdown-label">Symposium countdown</span>
-      <div class="countdown-units">
-        <div class="countdown-unit"><span class="cd-val" id="cd-days">00</span><span class="cd-lbl">Days</span></div>
-        <span class="cd-sep" aria-hidden="true">:</span>
-        <div class="countdown-unit"><span class="cd-val" id="cd-hours">00</span><span class="cd-lbl">Hours</span></div>
-        <span class="cd-sep" aria-hidden="true">:</span>
-        <div class="countdown-unit"><span class="cd-val" id="cd-mins">00</span><span class="cd-lbl">Mins</span></div>
-        <span class="cd-sep" aria-hidden="true">:</span>
-        <div class="countdown-unit"><span class="cd-val" id="cd-secs">00</span><span class="cd-lbl">Secs</span></div>
-      </div>
-    </div>
-  </div>
+
 </section>
 
 <!-- ====================================================
@@ -739,45 +769,45 @@
         <span class="sched-detail">Online via Google Meet</span>
       </div>
     </div>
-    <div class="timeline fade-in">
-      <div class="tl-item">
-        <div class="tl-time">13:15</div>
-        <div class="tl-dot blue-dot"></div>
-        <div class="tl-body"><h4>Pre-Session — Join Google Meet &amp; Tech Check</h4><p>Join the Google Meet link early. Test audio, video, and screen sharing. Welcome by registration team.</p><span class="tl-tag">Pre-Event</span></div>
+    <div class="sched-cards fade-in">
+      <div class="sched-card">
+        <div class="sched-card-time">13:15</div>
+        <div class="sched-card-tag tag-gray">PRE-EVENT</div>
+        <div class="sched-card-body"><h4>Pre-Session &mdash; Join Google Meet &amp; Tech Check</h4><p>Join the Google Meet link early. Test audio, video, and screen sharing. Welcome by registration team.</p></div>
       </div>
-      <div class="tl-item">
-        <div class="tl-time">13:30</div>
-        <div class="tl-dot purple-dot"></div>
-        <div class="tl-body"><h4>Opening Ceremony</h4><p>Welcome address and symposium overview. Introduction of organizing teams and agenda review.</p><span class="tl-tag">Opening</span></div>
+      <div class="sched-card">
+        <div class="sched-card-time">13:30</div>
+        <div class="sched-card-tag tag-blue">OPENING</div>
+        <div class="sched-card-body"><h4>Opening Ceremony</h4><p>Welcome address and symposium overview. Introduction of organizing teams and agenda review.</p></div>
       </div>
-      <div class="tl-item">
-        <div class="tl-time">13:40</div>
-        <div class="tl-dot blue-dot"></div>
-        <div class="tl-body"><h4>Expert Speaker Keynote — Generative AI &amp; ICT Education</h4><p>An invited keynote address examining AI's broader impact on ICT learning and the skills required of tomorrow's developers.</p><span class="tl-tag">Keynote</span></div>
+      <div class="sched-card">
+        <div class="sched-card-time">13:40</div>
+        <div class="sched-card-tag tag-cyan">KEYNOTE</div>
+        <div class="sched-card-body"><h4>Expert Speaker Keynote &mdash; Generative AI &amp; ICT Education</h4><p>An invited keynote address examining AI's broader impact on ICT learning and the skills required of tomorrow's developers.</p></div>
       </div>
-      <div class="tl-item">
-        <div class="tl-time">14:00</div>
-        <div class="tl-dot purple-dot"></div>
-        <div class="tl-body"><h4>Research Presentation — AI Coding Agents &amp; Programming Skills</h4><p>Full presentation of research findings covering methodology, survey results, analysis, and key conclusions by the organizing team.</p><span class="tl-tag">Research</span></div>
+      <div class="sched-card">
+        <div class="sched-card-time">14:00</div>
+        <div class="sched-card-tag tag-purple">RESEARCH</div>
+        <div class="sched-card-body"><h4>Research Presentation &mdash; AI Coding Agents &amp; Programming Skills</h4><p>Full presentation of research findings covering methodology, survey results, analysis, and key conclusions.</p></div>
       </div>
-      <div class="tl-item">
-        <div class="tl-time">14:30</div>
-        <div class="tl-dot cyan-dot"></div>
-        <div class="tl-body"><h4>Panel Discussion — AI Tools: Friend or Foe to Learners?</h4><p>A moderated panel debating the pedagogical benefits and risks of AI coding assistants in university education.</p><span class="tl-tag">Panel</span></div>
+      <div class="sched-card">
+        <div class="sched-card-time">14:30</div>
+        <div class="sched-card-tag tag-cyan">PANEL</div>
+        <div class="sched-card-body"><h4>Panel Discussion &mdash; AI Tools: Friend or Foe to Learners?</h4><p>A moderated panel debating the pedagogical benefits and risks of AI coding assistants in university education.</p></div>
       </div>
-      <div class="tl-item">
-        <div class="tl-time">14:45</div>
-        <div class="tl-dot blue-dot"></div>
-        <div class="tl-body"><h4>Open Q&amp;A Session</h4><p>Audience questions for the research team and panelists. Open floor discussion on practical implications and recommendations.</p><span class="tl-tag">Interactive</span></div>
+      <div class="sched-card">
+        <div class="sched-card-time">14:45</div>
+        <div class="sched-card-tag tag-blue">Q&amp;A</div>
+        <div class="sched-card-body"><h4>Open Q&amp;A Session</h4><p>Audience questions for the research team and panelists. Open floor discussion on practical implications.</p></div>
       </div>
-      <div class="tl-item">
-        <div class="tl-time">15:00</div>
-        <div class="tl-dot purple-dot"></div>
-        <div class="tl-body"><h4>Closing Ceremony</h4><p>Closing remarks, acknowledgment of contributors, and announcement of proceedings publication. Group virtual photo.</p><span class="tl-tag">Closing</span></div>
+      <div class="sched-card">
+        <div class="sched-card-time">15:00</div>
+        <div class="sched-card-tag tag-gray">CLOSING</div>
+        <div class="sched-card-body"><h4>Closing Ceremony</h4><p>Closing remarks, acknowledgment of contributors, proceedings announcement. Group virtual photo.</p></div>
       </div>
     </div>
     <div class="schedule-cta fade-in">
-      <a href="#forms" class="btn btn-register">Register Now</a>
+      <a href="https://forms.gle/jCUCbBL1tZYNqtc36" target="_blank" rel="noopener noreferrer" class="btn btn-register">Register Now</a>
       <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join on Google Meet</a>
     </div>
   </div>

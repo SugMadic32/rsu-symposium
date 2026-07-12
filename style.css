@@ -954,3 +954,173 @@ img { max-width: 100%; height: auto; }
 /* ============================================================
    NAVBAR — professors link
    ============================================================ */
+
+/* ============================================================
+   HERO — TWO COLUMN WITH EVENT PANEL
+   ============================================================ */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 56px;
+  align-items: center;
+  padding: 80px 0 60px;
+  position: relative;
+  z-index: 2;
+}
+.hero-left { display: flex; flex-direction: column; }
+.hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+.hero-ctas .btn { width: auto; justify-content: center; }
+
+/* EVENT PANEL — Design C dark card */
+.hero-panel-wrap { flex-shrink: 0; }
+.event-panel {
+  background: #0f1829;
+  border: 1px solid #1e3050;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,.5);
+}
+.ep-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 16px;
+  background: #0b1120;
+  border-bottom: 1px solid #1a2840;
+}
+.ep-dot {
+  width: 11px; height: 11px; border-radius: 50%;
+}
+.ep-red    { background: #ff5f57; }
+.ep-yellow { background: #febc2e; }
+.ep-green  { background: #28c840; }
+.ep-title {
+  margin-left: 8px;
+  font-size: .72rem; font-weight: 600;
+  color: #5a7299; letter-spacing: .06em;
+}
+.ep-body { padding: 6px 0; }
+.ep-row {
+  display: flex; align-items: center; gap: 13px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #1a2840;
+  transition: background .15s;
+}
+.ep-row:hover { background: rgba(37,99,235,.05); }
+.ep-icon {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: rgba(37,99,235,.15);
+  border: 1px solid rgba(37,99,235,.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: #60a5fa;
+}
+.ep-info { display: flex; flex-direction: column; gap: 2px; }
+.ep-label {
+  font-size: .65rem; font-weight: 700;
+  color: #5a7299; letter-spacing: .1em; text-transform: uppercase;
+}
+.ep-val { font-size: .92rem; font-weight: 700; color: #f0f4ff; }
+
+/* COUNTDOWN INSIDE PANEL */
+.ep-countdown {
+  padding: 18px 20px;
+  background: #0b1120;
+  border-top: 1px solid #1a2840;
+}
+.ep-cd-label {
+  font-size: .62rem; font-weight: 700;
+  color: #5a7299; letter-spacing: .12em;
+  text-align: center; margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.ep-cd-units {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.ep-cd-u { text-align: center; }
+.ep-cd-u .cd-val {
+  font-size: 2rem; font-weight: 800;
+  background: linear-gradient(135deg, #2563eb, #0891b2);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; display: block; line-height: 1;
+  /* Override any previous cd-val styles */
+  font-family: 'Space Grotesk', 'Bricolage Grotesque', var(--font-d), sans-serif;
+}
+.ep-cd-l {
+  font-size: .6rem; color: #5a7299;
+  letter-spacing: .1em; display: block; margin-top: 3px;
+  -webkit-text-fill-color: initial;
+  color: #5a7299;
+}
+.ep-cd-sep {
+  font-size: 1.4rem; color: #1a2840; margin-bottom: 18px;
+  -webkit-text-fill-color: initial;
+}
+
+/* HERO RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; gap: 36px; }
+  .hero-panel-wrap { order: -1; }
+  .event-panel { max-width: 420px; }
+}
+@media (max-width: 600px) {
+  .hero-content { padding: 48px 0 40px; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; }
+}
+
+/* ============================================================
+   SCHEDULE — PROFESSIONAL CARD ROWS
+   ============================================================ */
+.sched-cards {
+  display: flex; flex-direction: column; gap: 8px;
+  margin-top: 8px;
+}
+.sched-card {
+  display: grid;
+  grid-template-columns: 58px 110px 1fr;
+  align-items: stretch;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.sched-card:hover {
+  border-color: var(--c-blue);
+  box-shadow: 0 4px 20px rgba(26,92,255,.08);
+}
+.sched-card-time {
+  display: flex; align-items: center; justify-content: center;
+  padding: 18px 8px;
+  font-family: var(--font-m);
+  font-size: .78rem; font-weight: 700;
+  color: var(--c-blue);
+  border-right: 1px solid var(--c-border);
+  text-align: center;
+  background: var(--c-blue-l);
+}
+.sched-card-tag {
+  display: flex; align-items: center; justify-content: center;
+  padding: 18px 10px;
+  font-size: .62rem; font-weight: 800;
+  letter-spacing: .08em;
+  border-right: 1px solid var(--c-border);
+  text-align: center;
+}
+.tag-blue   { background: rgba(26,92,255,.08);  color: var(--c-blue);   }
+.tag-purple { background: rgba(124,58,237,.08); color: var(--c-purple); }
+.tag-cyan   { background: rgba(6,182,212,.08);  color: var(--c-cyan);   }
+.tag-gray   { background: var(--c-surface2);    color: var(--c-muted);  }
+
+.sched-card-body { padding: 18px 22px; }
+.sched-card-body h4 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+.sched-card-body p { font-size: .83rem; color: var(--c-muted); line-height: 1.6; }
+
+/* Schedule responsive */
+@media (max-width: 680px) {
+  .sched-card { grid-template-columns: 48px 1fr; }
+  .sched-card-tag { display: none; }
+  .sched-card-time { font-size: .7rem; padding: 16px 6px; }
+  .sched-card-body { padding: 14px 16px; }
+  .sched-card-body h4 { font-size: .88rem; }
+}
