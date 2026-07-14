@@ -225,10 +225,18 @@
               <img src="images/gallery/poster-3.png" alt="RSU ICT Symposium 2026 Poster 3" class="poster-img">
             </div>
           </div>
-          <div class="poster-dots">
-            <button class="poster-dot active" onclick="goToSlide(0)" aria-label="Poster 1"></button>
-            <button class="poster-dot" onclick="goToSlide(1)" aria-label="Poster 2"></button>
-            <button class="poster-dot" onclick="goToSlide(2)" aria-label="Poster 3"></button>
+          <div class="poster-controls">
+            <button class="poster-arrow poster-arrow-left" onclick="changeSlide(-1)" aria-label="Previous poster">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="poster-dots">
+              <button class="poster-dot active" onclick="goToSlide(0)" aria-label="Poster 1"></button>
+              <button class="poster-dot" onclick="goToSlide(1)" aria-label="Poster 2"></button>
+              <button class="poster-dot" onclick="goToSlide(2)" aria-label="Poster 3"></button>
+            </div>
+            <button class="poster-arrow poster-arrow-right" onclick="changeSlide(1)" aria-label="Next poster">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
           </div>
 
         </div>
@@ -607,14 +615,14 @@
       <div class="member-grid">
         <div class="member-card">
           <div class="member-avatar-wrap">
-            <img src="images/members/htun-naung-oo.jpg" alt="Htun Naung Oo" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img src="images/members/htin-lin-aung.jpg" alt="Htin Lin Aung" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="member-avatar-wrap">
-            <img src="images/members/htun-naung-oo.jpg" alt="Htun Naung Oo" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7);display:none">HN</div>
+            <img src="images/members/htin-lin-aung.jpg" alt="Htin Lin Aung" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="member-avatar" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);display:none">HL</div>
           </div>
           </div>
-          <div class="member-name">Htun Naung Oo</div>
-          <div class="member-id">6702854 &middot; Memory</div>
+          <div class="member-name">Htin Lin Aung</div>
+          <div class="member-id">6601671 &middot; Carlos</div>
           <div class="member-role purple-role">Creative Lead</div>
           <p class="member-desc">Leads creative direction, visual identity, and design strategy for all publications.</p>
         </div>
@@ -729,7 +737,7 @@
         </div>
         <div class="member-card">
           <div class="member-avatar-wrap">
-            <img src="images/members/hsu-lei-yee.jpg" alt="Hsu Lei Yee" class="member-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img src="images/members/hsu-lei-yee.jpg" alt="Hsu Lei Yee" class="member-photo" onerror="if(this.src.includes('.jpg')){this.src='images/members/hsu-lei-yee.png'}else if(this.src.includes('.png')){this.src='images/members/hsu-lei-yee.jpeg'}else{this.style.display='none';this.nextElementSibling.style.display='flex'}">
             <div class="member-avatar" style="background:linear-gradient(135deg,#ef4444,#dc2626)">HL</div>
           </div>
           <div class="member-name">Hsu Lei Yee</div>
