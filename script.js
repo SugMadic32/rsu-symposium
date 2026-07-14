@@ -398,24 +398,56 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // ——————————————————————————————————————————
 // CONTACT FORM SUBMIT
 // ——————————————————————————————————————————
-function submitForm(e) {
+async function submitForm(e) {
   e.preventDefault();
   const btn = e.target;
   const note = document.getElementById('formNote');
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
   const email = document.getElementById('email').value.trim();
-  if (!email) {
-    note.textContent = 'Please enter your email address.';
+  const subject = document.getElementById('subject').value;
+  const msg = document.getElementById('msg').value.trim();
+
+  if (!email || !msg) {
+    note.textContent = 'Please enter your email and a message.';
     note.style.color = '#dc2626';
     return;
   }
+
   btn.textContent = 'Sending…';
   btn.disabled = true;
-  setTimeout(() => {
-    note.textContent = 'Message sent! We will get back to you soon.';
-    note.style.color = '#059669';
-    btn.textContent = 'Send Message';
-    btn.disabled = false;
-  }, 1200);
+
+  try {
+    const response = await fetch('https://formspree.io/f/mwvgpnvo', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: fname,
+        lastName: lname,
+        email: email,
+        subject: subject,
+        message: msg
+      })
+    });
+
+    if (response.ok) {
+      note.textContent = 'Message sent! We will get back to you soon.';
+      note.style.color = '#059669';
+      document.getElementById('fname').value = '';
+      document.getElementById('lname').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('msg').value = '';
+    } else {
+      note.textContent = 'Something went wrong. Please email us directly instead.';
+      note.style.color = '#dc2626';
+    }
+  } catch (err) {
+    note.textContent = 'Something went wrong. Please email us directly instead.';
+    note.style.color = '#dc2626';
+  }
+
+  btn.textContent = 'Send Message';
+  btn.disabled = false;
 }
 
 // ——————————————————————————————————————————
