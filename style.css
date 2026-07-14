@@ -186,12 +186,19 @@ h4 { font-size: 1rem; }
 #particleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 .hero-content { position: relative; z-index: 2; padding: 72px 0 40px; width: 100%; }
 .hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--c-blue-l); border: 1px solid rgba(26,92,255,.2);
-  color: var(--c-blue); padding: 6px 14px; border-radius: 50px;
-  font-size: .8rem; font-weight: 600; letter-spacing: .04em; margin-bottom: 24px;
+  display: inline-flex; align-items: center; gap: 9px;
+  background: linear-gradient(135deg, rgba(26,92,255,.07), rgba(124,58,237,.07));
+  border: 1px solid rgba(26,92,255,.16);
+  color: var(--c-blue-d); padding: 7px 16px; border-radius: 50px;
+  font-size: .78rem; font-weight: 600; letter-spacing: .01em; margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(16,64,204,.07), inset 0 1px 0 rgba(255,255,255,.5);
 }
-.eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-blue); animation: blink 1.5s infinite; }
+.eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  background: var(--c-grad);
+  box-shadow: 0 0 0 3px rgba(26,92,255,.12);
+  animation: blink 2s ease-in-out infinite;
+}
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
 .hero-title { font-size: clamp(2.2rem, 5.5vw, 4rem); letter-spacing: -.04em; line-height: 1.1; margin-bottom: 16px; }
 .hero-subtitle { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--c-muted); max-width: 580px; margin-bottom: 28px; }
@@ -385,6 +392,12 @@ h4 { font-size: 1rem; }
 .purple-role { background: var(--c-purple-l); color: var(--c-purple); }
 .amber-role { background: #fef3c7; color: #d97706; }
 .red-role { background: #fee2e2; color: var(--c-red); }
+[data-theme="dark"] .hero-eyebrow {
+  background: linear-gradient(135deg, rgba(26,92,255,.14), rgba(124,58,237,.14));
+  border: 1px solid rgba(120,150,255,.22);
+  color: #a9c1ff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.06);
+}
 [data-theme="dark"] .green-role { background: #052e16; color: #34d399; }
 [data-theme="dark"] .amber-role { background: #3a2000; color: #fbbf24; }
 [data-theme="dark"] .red-role { background: #3a0a0a; color: #f87171; }
