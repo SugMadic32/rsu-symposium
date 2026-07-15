@@ -160,6 +160,32 @@ if (document.readyState === "loading") {
 }
 
 // ——————————————————————————————————————————
+// MEET LINK LOCK — opens 27 July 2026 13:30 GMT+7 (pre-session tech check)
+// ——————————————————————————————————————————
+const MEET_URL = 'https://meet.google.com/oij-ueed-xcs';
+
+function checkMeetLock() {
+  const unlockTime = new Date('2026-07-27T13:30:00+07:00');
+  if (new Date() < unlockTime) return;
+
+  document.querySelectorAll('[data-meet-btn]').forEach(function(btn) {
+    btn.href = MEET_URL;
+    btn.target = '_blank';
+    btn.rel = 'noopener noreferrer';
+    btn.classList.remove('btn-locked');
+    btn.removeAttribute('aria-disabled');
+    btn.removeAttribute('title');
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.36a1 1 0 0 1-1.447.894L15 14"/><rect x="1" y="6" width="15" height="12" rx="2"/></svg> Join on Google Meet';
+  });
+}
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", checkMeetLock);
+} else {
+  checkMeetLock();
+}
+setInterval(checkMeetLock, 30000);
+
+// ——————————————————————————————————————————
 // STATS COUNTER ANIMATION
 // ——————————————————————————————————————————
 let statsAnimated = false;

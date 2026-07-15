@@ -97,6 +97,8 @@ h4 { font-size: 1rem; }
 .btn-primary:hover { box-shadow: 0 8px 28px rgba(26,92,255,.45); }
 .btn-outline { background: transparent; border: 1.5px solid var(--c-border); color: var(--c-text); }
 .btn-outline:hover { border-color: var(--c-blue); color: var(--c-blue); background: var(--c-blue-l); }
+.btn-locked { background: var(--c-surface2); color: var(--c-muted); box-shadow: none; cursor: not-allowed; opacity: .75; }
+.btn-locked:hover { transform: none; box-shadow: none; }
 
 /* ============================================================
    NAVBAR
