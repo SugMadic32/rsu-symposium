@@ -513,6 +513,43 @@ document.addEventListener('DOMContentLoaded', checkEvalLock);
 setInterval(checkEvalLock, 60000);
 
 // ——————————————————————————————————————————
+// GOOGLE MEET LOCK — unlocks 27 July 2026 1:30 PM GMT+7
+// ——————————————————————————————————————————
+function checkMeetLock() {
+  const unlockTime = new Date('2026-07-27T13:30:00+07:00');
+  const now = new Date();
+  const buttons = document.querySelectorAll('.meet-btn');
+
+  buttons.forEach(btn => {
+    const label = btn.querySelector('.meet-btn-label');
+    if (now >= unlockTime) {
+      // UNLOCKED
+      btn.classList.remove('btn-locked');
+      btn.href = btn.dataset.originalHref;
+      btn.removeAttribute('aria-disabled');
+      if (label) label.textContent = 'Join on Google Meet';
+    } else {
+      // LOCKED — calculate time remaining
+      btn.classList.add('btn-locked');
+      btn.removeAttribute('href');
+      btn.setAttribute('aria-disabled', 'true');
+      const diff = unlockTime - now;
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      let text;
+      if (d > 0) text = `Opens in ${d}d ${h}h`;
+      else if (h > 0) text = `Opens in ${h}h ${m}m`;
+      else text = `Opens in ${m}m`;
+      if (label) label.textContent = text;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', checkMeetLock);
+setInterval(checkMeetLock, 60000);
+
+// ——————————————————————————————————————————
 // POSTER SLIDESHOW
 // ——————————————————————————————————————————
 let currentSlide = 0;

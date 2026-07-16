@@ -95,6 +95,12 @@ h4 { font-size: 1rem; }
 .btn:hover { transform: translateY(-2px); text-decoration: none; }
 .btn-primary { background: var(--c-grad); color: #fff; box-shadow: 0 4px 18px rgba(26,92,255,.3); }
 .btn-primary:hover { box-shadow: 0 8px 28px rgba(26,92,255,.45); }
+.meet-btn.btn-locked {
+  background: var(--c-surface2); color: var(--c-muted);
+  box-shadow: none; border: 1px solid var(--c-border);
+  cursor: not-allowed; pointer-events: none; opacity: .85;
+}
+.meet-btn.btn-locked:hover { box-shadow: none; }
 .btn-outline { background: transparent; border: 1.5px solid var(--c-border); color: var(--c-text); }
 .btn-outline:hover { border-color: var(--c-blue); color: var(--c-blue); background: var(--c-blue-l); }
 
